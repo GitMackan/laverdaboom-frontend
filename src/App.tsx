@@ -24,7 +24,7 @@ const ScrollToTop = () => {
 };
 
 function App() {
-  ga4.initialize(process.env.GOOGLE_ANALYTICS_ID as string, {
+  ga4.initialize("G-77X3C4HT36", {
     gaOptions: {
       storage: undefined,
       storeGac: true,
