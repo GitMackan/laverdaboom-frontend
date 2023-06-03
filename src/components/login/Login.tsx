@@ -8,6 +8,10 @@ const Login = ({ setIsLoggedIn }: LoginProps) => {
   const [password, setPassword] = useState<string | undefined>();
   const [cookies, setCookie] = useCookies(["LAVERDABOOM-AUTH"]);
 
+  useEffect(() => {
+    axios.defaults.withCredentials = true;
+  }, []);
+
   const login = async () => {
     try {
       await axios
