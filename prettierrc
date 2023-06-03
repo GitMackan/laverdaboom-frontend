@@ -1,0 +1,17 @@
+{
+  "trailingComma": "es6",
+  "semi": true,
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.mdx"
+      ],
+      "options": {
+        "semi": false
+      }
+    }
+  ],
+  "singleQuote": true
+}

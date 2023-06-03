@@ -1,0 +1,175 @@
+@import "../../variables";
+
+.admin-wrapper {
+  padding: 15vh 0;
+  min-height: 75vh;
+  max-width: 100%;
+}
+
+.choices {
+  width: 100%;
+  display: flex;
+  max-width: 960px;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.choice {
+  border: 1px solid black;
+  padding: 3rem 5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.choice:hover {
+  text-decoration: underline;
+}
+
+.add-container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 5rem;
+  border: 1px solid black;
+  padding: 3rem;
+  width: 100%;
+}
+
+.add-container h2 {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.add-form {
+  margin: 0 auto;
+  max-width: 80%;
+  display: grid;
+  margin-top: 2rem;
+}
+
+.input-field-container {
+  display: grid;
+  justify-content: center;
+  margin: 1rem 0;
+  width: 100%;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.removeBtn {
+  margin-top: 2rem;
+  background: red;
+  color: $color-grey;
+  padding: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.removeBtn:hover {
+  text-decoration: underline;
+}
+
+.selectedImg {
+  border: 5px solid $color-accent;
+}
+
+.input-field-container label {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.input-field-container input {
+  height: 3rem;
+  font-size: 1.2rem;
+  padding-left: 10px;
+  width: 400px;
+}
+
+.add-btn {
+  background: $color-dark;
+  color: $color-grey;
+  font-size: 1.2rem;
+  padding: 16px 12px;
+  cursor: pointer;
+  width: 15rem;
+}
+
+.add-btn:hover {
+  text-decoration: underline;
+}
+
+.update-wrapper {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.update-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.update-dog-list {
+  flex: 1;
+}
+
+.update-dog-list ul {
+  list-style: none;
+}
+
+.update-dog-list ul li {
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  padding: 12px;
+}
+
+.update-dog-list ul li:hover {
+  text-decoration: underline;
+}
+
+.update-form {
+  flex: 2;
+}
+
+.chosen {
+  background: black;
+  color: white;
+}
+
+.titles-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  width: 100%;
+
+  .titles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid $color-dark;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    gap: 0.5rem;
+    border-radius: 10px;
+  }
+}
+
+.title-btn {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.display-image {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  img {
+    max-width: 100%;
+  }
+}

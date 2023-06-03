@@ -1,0 +1,39 @@
+@import "../variables";
+
+.image-container {
+  display: grid;
+  height: 500px;
+  width: 70%;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 10vh;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-dark;
+  font-family: $font-cursive;
+  color: $color-accent;
+  font-size: 4em;
+}
+
+.img1 {
+  width: 100%;
+  background: url("../../public/images/rex2.jpeg");
+  background-size: cover;
+}
+
+.img2 {
+  width: 100%;
+  background: url("../../public/images/ginny.jpeg");
+  background-size: cover;
+}
+
+.img3 {
+  width: 100%;
+  background: url("../../public/images/rex.jpeg");
+  background-size: cover;
+}

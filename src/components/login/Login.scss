@@ -1,0 +1,49 @@
+@import "../../variables";
+
+.login-wrapper {
+  padding: 15vh 0;
+  min-height: 75vh;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+  border: 1px solid $color-dark;
+  padding: 2rem;
+  max-width: 400px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.login-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.login-form-input input {
+  height: 2rem;
+}
+
+.login-btn {
+  background: white;
+  border: 1px solid black;
+  padding: 8px 4px;
+  background: $color-dark;
+  color: $color-accent;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  text-decoration: underline;
+}

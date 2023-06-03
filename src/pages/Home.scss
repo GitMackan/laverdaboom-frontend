@@ -1,0 +1,408 @@
+@import "../variables";
+
+.home-wrapper {
+  margin-top: -10px;
+}
+
+.news-container {
+  display: flex;
+  background: $color-white;
+  min-height: 100vh;
+  align-items: center;
+  z-index: -20;
+}
+.news {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card-heading-container {
+  position: relative;
+  width: fit-content;
+}
+
+.dog-paw {
+  position: absolute;
+  top: -100px;
+  left: -75px;
+  width: 200px;
+  height: 200px;
+  opacity: 10%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card-heading {
+  font-family: $font-cursive;
+  font-size: 6rem;
+  color: $color-accent;
+  margin-bottom: 2rem;
+  border-bottom: 0.5px solid $color-detail;
+  padding-bottom: 1.5rem;
+}
+
+.about-card-heading {
+  font-family: $font-cursive;
+  font-size: 6rem;
+  color: $color-dark;
+  margin-bottom: 2rem;
+  border-bottom: 0.5px solid $color-secondary;
+  padding-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.puppie-heading {
+  font-family: $font-cursive;
+  font-size: 6rem;
+  color: $color-accent;
+  margin-bottom: 2rem;
+  border-bottom: 0.5px solid $color-detail;
+  padding-bottom: 1.5rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.presentation-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.presentation-container {
+  width: 100%;
+  background: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.presentation-left,
+.presentation-right {
+  flex: 1;
+  padding: 10rem 5rem;
+  align-self: center;
+  color: $color-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.presentation-container img {
+  max-width: 100%;
+}
+
+.presentation-second {
+  padding: 0 5rem;
+  padding-bottom: 5rem;
+  h3 {
+    font-size: 2rem;
+  }
+  p {
+    color: grey;
+  }
+  .presentation-list {
+    margin-top: 2rem;
+    p {
+      font-size: 1.4rem;
+      color: black;
+      margin-bottom: 2rem;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      li {
+        display: flex;
+        padding: 1.5rem 0;
+        gap: 0.5rem;
+        align-items: center;
+        p {
+          color: black;
+          font-size: 1.3rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.news-left,
+.news-right {
+  flex: 1;
+  padding: 8rem 2rem;
+}
+
+.news-left p,
+.presentation-right p {
+  max-width: 500px;
+  letter-spacing: 0.03em;
+  line-height: 2rem;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.news-right img {
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0px 0px 10px $color-accent;
+}
+
+.upcoming-puppies-wrapper,
+.puppie-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(255, 240, 240);
+  padding-bottom: 5rem;
+}
+
+.upcoming-puppies {
+  padding: 6rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 0 auto;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1600px;
+  background-color: rgb(255, 240, 240);
+  h2 {
+    font-family: $font-cursive;
+    font-size: 4rem;
+    text-align: center;
+    color: $color-accent;
+    margin-bottom: 2rem;
+  }
+  p {
+    max-width: 600px;
+    letter-spacing: 0.03em;
+    line-height: 1.8rem;
+    font-size: 1rem;
+    font-weight: 100;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .left {
+    padding: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+      margin-top: 2rem;
+      font-weight: 100;
+      color: $color-accent;
+      cursor: pointer;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .dog-paragraph {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      max-width: 600px;
+      padding: 1rem;
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .gender-icon {
+        align-self: center;
+      }
+    }
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    width: 100%;
+    img {
+      min-width: 300px;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.puppie-news {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding-top: 5em;
+  width: 100%;
+}
+
+.puppie-container h2 {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.puppie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: $font-cursive;
+  text-align: center;
+  margin-bottom: 2em;
+
+  img {
+    max-width: 100%;
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  img:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 1px 2px 79px -4px rgba(255, 248, 214, 0.66);
+    -webkit-box-shadow: 1px 2px 79px -4px rgba(255, 248, 214, 0.66);
+    -moz-box-shadow: 1px 2px 79px -4px rgba(255, 248, 214, 0.66);
+  }
+}
+
+.puppie-card h3 {
+  font-size: 2.5em;
+  color: $color-accent;
+  margin-bottom: 1em;
+}
+
+.partners-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5rem 0;
+  z-index: -20;
+}
+
+.partner {
+  max-width: 200px;
+}
+
+.partner img {
+  max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .puppie-news {
+    grid-template-columns: 1fr;
+  }
+
+  .presentation-container {
+    flex-direction: column;
+    padding: 2rem;
+    margin: 0;
+    .presentation-left,
+    .presentation-right {
+      flex: 1;
+      padding: 0;
+      align-self: center;
+      color: $color-dark;
+    }
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .news-container {
+    min-height: 0;
+    width: 100%;
+    .news {
+      margin-top: 4rem;
+      flex-direction: column;
+      padding: 3rem 0;
+      width: 100%;
+      gap: 0rem;
+      .news-left,
+      .news-right {
+        flex: 1;
+        padding: 2rem 0rem;
+        h2 {
+          font-size: 5rem;
+        }
+      }
+      .dog-paw {
+        top: -90px;
+        left: -25px;
+        width: 150px;
+        height: 150px;
+        opacity: 10%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .upcoming-puppies {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    gap: 0rem;
+    align-items: start;
+    justify-content: start;
+    .left {
+      padding: 1rem;
+      h2 {
+        font-size: 3.5rem;
+      }
+    }
+    .right {
+      margin-top: 2rem;
+      margin-left: 0rem;
+      img {
+        min-width: 200px;
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .partners-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+  }
+
+  .puppie-container h2 {
+    font-size: 4rem;
+  }
+
+  .puppie-card {
+    img {
+      max-width: 90%;
+    }
+  }
+  .news-container {
+    padding: 2rem;
+  }
+}
