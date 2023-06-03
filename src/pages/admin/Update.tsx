@@ -31,17 +31,22 @@ const Update = () => {
     setImage(event.target.files[0]);
   };
 
-  const api = axios.create({
-    withCredentials: true,
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
-  });
+  // const api = axios.create({
+  //   withCredentials: true,
+  //   headers: {
+  //     "Content-Type": "multipart/form-data",
+  //     cookie: `cookie1=cookie`,
+  //   },
+  // });
+
+  useEffect(() => {
+    axios.defaults.withCredentials = true;
+  }, []);
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      await api.patch(
+      await axios.patch(
         `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
         {
           name: name,
@@ -60,6 +65,9 @@ const Update = () => {
           titles: titles && titles,
         },
         {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
           withCredentials: true,
         }
       );
@@ -73,7 +81,7 @@ const Update = () => {
     e.preventDefault();
     const newImages = selectedDog?.image.filter((e) => e !== selectedImg);
     try {
-      await api.patch(
+      await axios.patch(
         `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
         {
           name: name && name,
@@ -106,7 +114,7 @@ const Update = () => {
   };
 
   useEffect(() => {
-    api.get("https://laverdaboom-api.herokuapp.com/dogs").then((response) => {
+    axios.get("https://laverdaboom-api.herokuapp.com/dogs").then((response) => {
       setDogs(response.data);
     });
   }, [submitted]);
