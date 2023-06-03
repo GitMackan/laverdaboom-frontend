@@ -31,12 +31,17 @@ const Update = () => {
     setImage(event.target.files[0]);
   };
 
-  axios.defaults.withCredentials = true;
+  const api = axios.create({
+    withCredentials: true,
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      await axios.patch(
+      await api.patch(
         // `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
         `http://localhost:8080/dogs/${selectedDogId}`,
         {
@@ -54,13 +59,13 @@ const Update = () => {
           image: selectedDog && selectedDog.image,
           file: image && image,
           titles: titles && titles,
-        },
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-          withCredentials: true,
         }
+        // {
+        //   headers: {
+        //     "Content-Type": "multipart/form-data",
+        //   },
+        //   withCredentials: true,
+        // }
       );
       setSubmitted(!submitted);
     } catch (error) {
