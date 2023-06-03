@@ -11,6 +11,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import "./styles.scss";
 import Puppies from "./pages/Puppies";
 import { useEffect } from "react";
+import ga4 from "react-ga4";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -23,6 +24,13 @@ const ScrollToTop = () => {
 };
 
 function App() {
+  ga4.initialize(process.env.GOOGLE_ANALYTICS_ID as string, {
+    gaOptions: {
+      storage: undefined,
+      storeGac: true,
+    },
+  });
+
   return (
     <CookiesProvider>
       <ParallaxProvider>
