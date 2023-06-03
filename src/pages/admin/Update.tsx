@@ -55,7 +55,7 @@ const Update = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            // Cookie: cookie,
+            Cookie: cookie && cookie,
           },
           withCredentials: true,
         }
