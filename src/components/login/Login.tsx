@@ -13,7 +13,7 @@ const Login = ({ setIsLoggedIn }: LoginProps) => {
       await axios
         .post(
           // `https://laverdaboom-api.herokuapp.com/login`,
-          `https://localhost:8080/login`,
+          `http://localhost:8080/login`,
 
           {
             username: username,
