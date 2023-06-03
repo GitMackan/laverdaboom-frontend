@@ -29,7 +29,7 @@ const AddNew = () => {
     e.preventDefault();
 
     await axios.post(
-      `http://localhost:8080/dogs`,
+      `https://laverdaboom-api.herokuapp.com/dogs`,
       {
         name: name,
         breed: breed && breed,

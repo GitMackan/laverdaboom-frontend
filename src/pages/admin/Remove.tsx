@@ -7,17 +7,20 @@ const Remove = () => {
   const [selectedDogId, setSelectedDogId] = useState<string>();
 
   const handleRemove = () => {
-    axios.delete(`http://localhost:8080/dogs/${selectedDogId}`, {
-      headers: {
-        "Content-Type": "application/json",
-        // Cookie: cookie,
-      },
-      withCredentials: true,
-    });
+    axios.delete(
+      `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          // Cookie: cookie,
+        },
+        withCredentials: true,
+      }
+    );
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8080/dogs").then((response) => {
+    axios.get("https://laverdaboom-api.herokuapp.com/dogs").then((response) => {
       setDogs(response.data);
     });
   }, []);

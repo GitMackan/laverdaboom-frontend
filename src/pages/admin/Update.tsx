@@ -35,7 +35,7 @@ const Update = () => {
     e.preventDefault();
     try {
       await axios.patch(
-        `http://localhost:8080/dogs/${selectedDogId}`,
+        `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
         {
           name: name,
           breed: breed && breed,
@@ -71,7 +71,7 @@ const Update = () => {
     const newImages = selectedDog?.image.filter((e) => e !== selectedImg);
     try {
       await axios.patch(
-        `http://localhost:8080/dogs/${selectedDogId}`,
+        `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
         {
           name: name && name,
           breed: breed && breed,
@@ -103,7 +103,7 @@ const Update = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8080/dogs").then((response) => {
+    axios.get("https://laverdaboom-api.herokuapp.com/dogs").then((response) => {
       setDogs(response.data);
     });
   }, [submitted]);

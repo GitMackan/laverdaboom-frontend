@@ -11,11 +11,14 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/email", {
-        name,
-        email,
-        message,
-      });
+      const response = await axios.post(
+        "https://laverdaboom-api.herokuapp.com/email",
+        {
+          name,
+          email,
+          message,
+        }
+      );
     } catch (error) {
       console.error("Failed.", error);
     }
