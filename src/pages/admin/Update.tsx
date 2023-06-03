@@ -35,7 +35,6 @@ const Update = () => {
     withCredentials: true,
     headers: {
       "Content-Type": "multipart/form-data",
-      Cookie: `LAVERDABOOM-AUTH=${cookie}`,
     },
   });
 
@@ -44,7 +43,6 @@ const Update = () => {
     try {
       await api.patch(
         `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
-        // `http://localhost:8080/dogs/${selectedDogId}`,
         {
           name: name,
           breed: breed && breed,
@@ -60,13 +58,10 @@ const Update = () => {
           image: selectedDog && selectedDog.image,
           file: image && image,
           titles: titles && titles,
+        },
+        {
+          withCredentials: true,
         }
-        // {
-        //   headers: {
-        //     "Content-Type": "multipart/form-data",
-        //   },
-        //   withCredentials: true,
-        // }
       );
       setSubmitted(!submitted);
     } catch (error) {
@@ -78,7 +73,7 @@ const Update = () => {
     e.preventDefault();
     const newImages = selectedDog?.image.filter((e) => e !== selectedImg);
     try {
-      await axios.patch(
+      await api.patch(
         `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
         {
           name: name && name,
@@ -111,7 +106,7 @@ const Update = () => {
   };
 
   useEffect(() => {
-    axios.get("https://laverdaboom-api.herokuapp.com/dogs").then((response) => {
+    api.get("https://laverdaboom-api.herokuapp.com/dogs").then((response) => {
       setDogs(response.data);
     });
   }, [submitted]);
@@ -301,7 +296,7 @@ const Update = () => {
               </div>
               <div className="input-field-container">
                 <button className="add-btn" type="submit">
-                  Uppdaterade
+                  Uppdaterades
                 </button>
               </div>
             </form>
