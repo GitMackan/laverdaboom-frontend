@@ -35,7 +35,7 @@ const Update = () => {
     withCredentials: true,
     headers: {
       "Content-Type": "multipart/form-data",
-      Cookies: `LAVERDABOOM-AUTH=${cookie}`,
+      Cookie: `LAVERDABOOM-AUTH=${cookie}`,
     },
   });
 
@@ -301,7 +301,7 @@ const Update = () => {
               </div>
               <div className="input-field-container">
                 <button className="add-btn" type="submit">
-                  Uppdaterad
+                  Uppdaterade
                 </button>
               </div>
             </form>
