@@ -31,6 +31,8 @@ const Update = () => {
     setImage(event.target.files[0]);
   };
 
+  axios.defaults.withCredentials = true;
+
   const onSubmit = async (e: any) => {
     e.preventDefault();
     try {
@@ -56,7 +58,6 @@ const Update = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            Cookies: `cookie1=${cookie}`,
           },
           withCredentials: true,
         }
