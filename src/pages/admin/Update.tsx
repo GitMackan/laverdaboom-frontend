@@ -56,7 +56,7 @@ const Update = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            // Cookie: cookie,
+            Cookies: `cookie1=${cookie}`,
           },
           withCredentials: true,
         }
@@ -294,7 +294,7 @@ const Update = () => {
               </div>
               <div className="input-field-container">
                 <button className="add-btn" type="submit">
-                  Uppdatera
+                  Uppdateras
                 </button>
               </div>
             </form>
