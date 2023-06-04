@@ -65,6 +65,7 @@ const Update = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            cookie: `LAVERDABOOM-AUTH=${cookie}`,
           },
           withCredentials: true,
         }
