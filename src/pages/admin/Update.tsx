@@ -45,7 +45,7 @@ const Update = () => {
     e.preventDefault();
     try {
       await axios.patch(
-        `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
+        `http://localhost:8080/dogs/${selectedDogId}`,
         {
           name: name,
           breed: breed && breed,
