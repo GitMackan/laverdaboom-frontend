@@ -61,11 +61,11 @@ const Update = () => {
           image: selectedDog && selectedDog.image,
           file: image && image,
           titles: titles && titles,
+          sessionToken: cookie,
         },
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            cookie: `LAVERDABOOM-AUTH=${cookie}`,
           },
           withCredentials: true,
         }
