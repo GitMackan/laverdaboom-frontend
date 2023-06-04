@@ -4,16 +4,18 @@ import { Parallax } from "react-scroll-parallax";
 import "./Home.scss";
 import { FiAward } from "react-icons/fi";
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
+import { useWindowSize } from "../utility/useWindowSize";
 
 const Home = () => {
+  const screenWidth = useWindowSize().width;
   const location = useLocation();
   const newsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (newsRef.current && location.hash === "#news") {
-      const offSet = -170;
+      const offSet = screenWidth && screenWidth > 1500 ? -125 : -125;
       const y =
         newsRef.current?.getBoundingClientRect().top +
         window.pageYOffset +
@@ -87,7 +89,7 @@ const Home = () => {
             <div className="dog-paragraph">
               <BsGenderMale size={40} className={"gender-icon"} />
               <p>
-                <b>Sire:</b>: SE U(V)CH SE VCH RLD F RLD N Yxtanejdens Sarek
+                <b>Sire:</b> SE U(V)CH SE VCH RLD F RLD N Yxtanejdens Sarek
                 (Örnbergets Boomerang x Yxtanejdens Octavia) Öga UA IVDD K0
                 BPH-Genomförd.
               </p>
@@ -104,7 +106,7 @@ const Home = () => {
               Tack Mlin Sundqvist för att jag fått låna din underbara Sarek &
               tack Kim Thuner för förtroendet med Skrållan.
             </p>
-            <a>Läs mer om våra valpar här</a>
+            <Link to={"/puppies"}>Läs mer om våra valpar här</Link>
           </div>
         </div>
         {/* <div className="presentation-wrapper">

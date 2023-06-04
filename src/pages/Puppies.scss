@@ -137,7 +137,7 @@
   .puppies-container {
     .puppies-intro {
       flex-direction: column;
-      padding: 0;
+      padding: 1rem;
       .intro-left {
         width: 100%;
         padding: 0;
@@ -148,6 +148,24 @@
         width: 100%;
         padding: 0;
         flex: 1;
+      }
+    }
+    .puppies-previous {
+      .puppies-previous-intro {
+        width: 100%;
+        .family {
+          flex-direction: column;
+          .previous-left {
+            padding: 1rem;
+          }
+          .previous-right {
+            flex: 1;
+            img {
+              width: 100%;
+              padding: 1rem;
+            }
+          }
+        }
       }
     }
   }

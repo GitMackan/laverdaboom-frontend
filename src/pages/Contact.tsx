@@ -41,7 +41,7 @@ const Contact = () => {
             <ul>
               <li>Sigfrid Edströms Gata 25B</li>
               <li>72466 Västerås</li>
-              <li>sandra.brannstrom@hotmail.se</li>
+              <li>sandra.brannstrom@hotmail.com</li>
               <li>070-773 91 50</li>
             </ul>
           </div>

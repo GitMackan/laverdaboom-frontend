@@ -9,6 +9,8 @@ import "./Navbar.scss";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [topScroll, setTopScroll] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const location = useLocation();
 
   const changeBackground = () => {
@@ -23,13 +25,6 @@ const Navbar = () => {
     changeBackground();
     window.addEventListener("scroll", changeBackground);
   }, []);
-
-  const handleNewsClick = () => {
-    scroller.scrollTo("news", {
-      smooth: true,
-      offset: -50, // Adjust the offset as needed to align with your fixed navbar
-    });
-  };
 
   function CustomLink({
     to,
@@ -83,30 +78,15 @@ const Navbar = () => {
     >
       <div className="navbar-logo">
         <h1 className="logo">
-          <Link
-            to="/"
-            style={{
-              color:
-                location.pathname === "/contact"
-                  ? colors.accent
-                  : topScroll
-                  ? "rgb(36, 35, 35)"
-                  : colors.accent,
-            }}
-          >
-            Laverdaboom
-          </Link>
+          <Link to="/">Laverdaboom</Link>
         </h1>
       </div>
       <ul className="navbar-links">
-        <div className="nav-item">
-          {/* <Link to="/#news" reloadDocument>
-            Nyheter
-          </Link> */}
+        {/* <div className="nav-item">
           <CustomLink to="/#news" reload={true}>
-            Nyheter
+            Om oss
           </CustomLink>
-        </div>
+        </div> */}
         <div className="nav-item">
           <CustomLink to="/dogs">Våra hundar</CustomLink>
         </div>
@@ -118,38 +98,68 @@ const Navbar = () => {
         </div>
       </ul>
       <div className="navbar-smallscreen">
-        <FiAlignRight onClick={() => setToggleMenu(true)} />
-
-        {toggleMenu && (
-          <div className="navbar-smallscreen_overlay">
-            <BiX
-              className="overlay-close"
-              onClick={() => setToggleMenu(false)}
-            />
-            <ul className="navbar-smallscreen_links">
-              <li>
-                <Link to="/" onClick={() => setToggleMenu(false)}>
-                  Hem
-                </Link>
-              </li>
-              <li>
-                <Link to="/dogs" onClick={() => setToggleMenu(false)}>
-                  Våra hundar
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" onClick={() => setToggleMenu(false)}>
-                  Kontakt
-                </Link>
-              </li>
-              <li>
-                <Link to="/puppies" onClick={() => setToggleMenu(false)}>
-                  Valpar
-                </Link>
-              </li>
-            </ul>
-          </div>
+        {!menuOpen ? (
+          <FiAlignRight
+            onClick={() => {
+              setToggleMenu(true);
+              setMenuOpen(true);
+            }}
+            color="#324b4c"
+          />
+        ) : (
+          <BiX
+            color="#324b4c"
+            className="overlay-close"
+            onClick={() => {
+              setToggleMenu(false);
+              setMenuOpen(false);
+            }}
+          />
         )}
+
+        {/* {menuOpen && ( */}
+        <div
+          className={`navbar-smallscreen_overlay ${
+            menuOpen ? "overlay-open" : ""
+          }`}
+        >
+          {/* <BiX
+            color="#324b4c"
+            className="overlay-close"
+            onClick={() => {
+              setToggleMenu(false);
+              setMenuOpen(false);
+            }}
+          /> */}
+          <ul className="navbar-smallscreen_links">
+            <li>
+              <Link to="/" onClick={() => setMenuOpen(false)}>
+                Hem
+              </Link>
+            </li>
+            {/* <li>
+              <Link to="/#news" onClick={() => setMenuOpen(false)}>
+                Om oss
+              </Link>
+            </li> */}
+            <li>
+              <Link to="/dogs" onClick={() => setMenuOpen(false)}>
+                Våra hundar
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                Kontakt
+              </Link>
+            </li>
+            <li>
+              <Link to="/puppies" onClick={() => setMenuOpen(false)}>
+                Valpar
+              </Link>
+            </li>
+          </ul>
+        </div>
+        {/* )} */}
       </div>
     </nav>
   );
