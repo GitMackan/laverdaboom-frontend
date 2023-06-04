@@ -1,20 +1,22 @@
 import axios from "axios";
+import { cookies } from "next/dist/client/components/headers";
 import React, { useEffect, useState } from "react";
 import { DogType } from "../dogs/Dog";
+import { useCookies } from "react-cookie";
 
 const Remove = () => {
   const [dogs, setDogs] = useState<DogType[] | undefined>();
   const [selectedDogId, setSelectedDogId] = useState<string>();
+  const [cookies, setCookie] = useCookies(["LAVERDABOOM-AUTH"]);
+  const cookie = cookies["LAVERDABOOM-AUTH"];
 
-  const handleRemove = () => {
-    axios.delete(
+  const handleRemove = async () => {
+    await axios.delete(
       `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
       {
-        headers: {
-          "Content-Type": "application/json",
-          // Cookie: cookie,
+        data: {
+          sessionToken: cookie,
         },
-        withCredentials: true,
       }
     );
   };

@@ -43,6 +43,7 @@ const AddNew = () => {
         birthDate: birthDate && birthDate,
         description: description && description,
         image: image && image,
+        sessionToken: cookie,
       },
       {
         headers: {
