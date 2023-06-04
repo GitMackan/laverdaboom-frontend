@@ -43,6 +43,7 @@ const Update = () => {
 
   useEffect(() => {
     setSelectedImg(undefined);
+    setImage(undefined);
   }, [selectedDogId]);
 
   const onSubmit = async (e: any) => {
@@ -76,9 +77,11 @@ const Update = () => {
       );
       setSubmitted(!submitted);
       setSelectedImg(undefined);
+      setImage(undefined);
     } catch (error) {
       console.log(error);
       setSelectedImg(undefined);
+      setImage(undefined);
     }
   };
 
@@ -115,9 +118,11 @@ const Update = () => {
 
       setSubmitted(!submitted);
       setSelectedImg(undefined);
+      setImage(undefined);
     } catch (error) {
       console.log(error);
       setSelectedImg(undefined);
+      setImage(undefined);
     }
   };
 
