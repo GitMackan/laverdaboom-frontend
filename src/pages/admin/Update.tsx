@@ -39,9 +39,7 @@ const Update = () => {
   //   },
   // });
 
-  useEffect(() => {
-    axios.defaults.withCredentials = true;
-  }, []);
+  axios.defaults.withCredentials = true;
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
