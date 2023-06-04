@@ -29,25 +29,25 @@ const Puppies = () => {
           <ul>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>SKK's köpekontrakt </p>
               </div>
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>Stamtavla </p>
               </div>
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} className="check-icon" />
                 <p>Ägaranmälan </p>
               </div>
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} className="check-icon" />
                 <p>
                   Startpaket med valpfoder (samma som valpen ätit hos oss),
                   gosedjur, godis och en filt
@@ -56,7 +56,7 @@ const Puppies = () => {
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>Informationsblad om försäkring </p>
               </div>
             </li>
@@ -65,37 +65,37 @@ const Puppies = () => {
           <ul>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>Registrerad i SKK</p>
               </div>
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>Minst 8 veckor gammal</p>
               </div>
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>Försäkrad i Folksam mot dolda fel</p>
               </div>
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>Veterinärbesiktigade max 7 dagar innan flytt</p>
               </div>
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>Vaccinerad</p>
               </div>
             </li>
             <li>
               <div className="check-list-item">
-                <FiCheck />
+                <FiCheck size={18} />
                 <p>ID-märkta med godkänt chip</p>
               </div>
             </li>

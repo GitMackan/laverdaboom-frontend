@@ -1,6 +1,7 @@
 import React from "react";
 import "./Sidebar.scss";
 import { DogType } from "../../pages/dogs/Dog";
+import { FiMinus } from "react-icons/fi";
 
 const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
   const maleDogs = dogs?.filter((e) => e.gender?.toLowerCase() === "hane");
@@ -19,7 +20,10 @@ const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
         <h3>Tikar</h3>
         {femaleDogs?.map((e) => (
           <li key={e._id}>
-            <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
+            <div>
+              <FiMinus size={10} />
+              <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
+            </div>
           </li>
         ))}
       </ul>
@@ -27,7 +31,10 @@ const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
         <h3>Hanar</h3>
         {maleDogs?.map((e) => (
           <li key={e._id}>
-            <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
+            <div>
+              <FiMinus size={10} />
+              <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
+            </div>
           </li>
         ))}
       </ul>
@@ -35,7 +42,10 @@ const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
         <h3>Änglahundar</h3>
         {angelDogs?.map((e) => (
           <li key={e._id}>
-            <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
+            <div>
+              <FiMinus size={10} />
+              <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
+            </div>
           </li>
         ))}
       </ul>

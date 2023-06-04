@@ -22,10 +22,12 @@
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   row-gap: 3rem;
   column-gap: 1rem;
-  font-size: 3rem;
-  font-family: $font-cursive;
   width: 100%;
-
+  h3 {
+    font-size: 1.1rem;
+    font-family: $font-secondary;
+    font-weight: 100;
+  }
   .all-dogs-dog {
     display: flex;
     flex-direction: column;

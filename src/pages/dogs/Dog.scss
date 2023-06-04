@@ -9,8 +9,9 @@
 }
 
 .dog-container h1 {
-  font-family: $font-cursive;
-  font-size: 4rem;
+  font-family: $font-secondary;
+  font-weight: 100;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -30,7 +31,7 @@
 
 .dog-main-image {
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 1.5em;
   margin-bottom: 5rem;
   display: flex;
   justify-content: center;

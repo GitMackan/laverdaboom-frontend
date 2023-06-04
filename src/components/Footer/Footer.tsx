@@ -15,7 +15,7 @@ const Footer = () => {
           <p>Sigfrid Edströms Gata 25B</p>
           <p>724 66 Västerås</p>
           <a href="mailto:sandrabrannstrom@hotmail.se">
-            sandrabrannstrom@hotmail.se
+            sandrabrannstrom@hotmail.com
           </a>
           <div className="social">
             <div className="facebook">

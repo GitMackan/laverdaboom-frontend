@@ -24,10 +24,14 @@
 .sidebar ul li {
   margin: 0.5rem 0;
   font-family: $font-secondary;
-
-  p {
-    cursor: pointer;
-    font-size: 1.1rem;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    p {
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
   }
 }
 

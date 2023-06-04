@@ -129,7 +129,7 @@ const DropdownMenu = ({
             <p className="dropdown-heading">Änglahundar</p>
           </li>
           {options
-            ?.filter((e) => e.gender?.toLowerCase() === "hane" && !e.angelDog)
+            ?.filter((e) => e.angelDog)
             .map((item) => (
               <li
                 id={item.name}
