@@ -20,9 +20,11 @@
 
 .second {
   width: inherit;
-  border: 1.5px solid black;
+  border-bottom: 1.5px solid black;
   background: white;
   padding: 16px;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
 }
 
 .third {
@@ -51,10 +53,19 @@
 .fifth {
   cursor: pointer;
   background: white;
-
+  font-family: $font-secondary;
   :hover {
     background: $color-grey;
   }
+}
+
+.dropdown-heading {
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: $font-secondary;
+
+  background: $color-dark;
+  color: $color-grey;
 }
 
 .dropdown-listItem {

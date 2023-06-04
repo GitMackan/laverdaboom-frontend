@@ -54,116 +54,43 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* <div className="puppie-container">
-          <h2 className="puppie-heading">Våra senaste tillskott</h2>
-          <div className="puppie-news">
-            <div className="puppie-card">
-              <h3>Ginny</h3>
-              <img src="./images/valp1.jpeg" alt="" />
+
+        <div className="upcoming-puppies-wrapper">
+          <div className="upcoming-puppies">
+            <div className="right">
+              <img src={`${assetUrl}Sarek.jpg`} />
+              <img src={`${assetUrl}skrallan.jpg`} />
             </div>
-            <div className="puppie-card">
-              <h3>Luna</h3>
-              <img src="./images/valp2.jpeg" alt="" />
-            </div>
-            <div className="puppie-card">
-              <h3>Madicken</h3>
-              <img src="./images/valp3.jpeg" alt="" />
-            </div>
-            <div className="puppie-card">
-              <h3>Mio</h3>
-              <img src="./images/valp4.jpeg" alt="" />
-            </div>
-          </div>
-        </div> */}
-        <div className="upcoming-puppies">
-          <div className="right">
-            <img src={`${assetUrl}Sarek.jpg`} />
-            <img src={`${assetUrl}skrallan.jpg`} />
-          </div>
-          <div className="left">
-            <h2>Planerad valpkull</h2>
-            <p>
-              Planerad kull på Kennel Laverdaboom. Efter lyckade parningar
-              håller vi nu tummarna för en kull på kenneln i Juli.
-            </p>
-            <div className="dog-paragraph">
-              <BsGenderMale size={40} className={"gender-icon"} />
+            <div className="left">
+              <h2>Planerad valpkull</h2>
               <p>
-                <b>Sire:</b> SE U(V)CH SE VCH RLD F RLD N Yxtanejdens Sarek
-                (Örnbergets Boomerang x Yxtanejdens Octavia) Öga UA IVDD K0
-                BPH-Genomförd.
+                Planerad kull på Kennel Laverdaboom. Efter lyckade parningar
+                håller vi nu tummarna för en kull på kenneln i Juli.
               </p>
-            </div>
-            <div className="dog-paragraph">
-              <BsGenderFemale size={40} className={"gender-icon"} />
+              <div className="dog-paragraph">
+                <BsGenderMale size={40} className={"gender-icon"} />
+                <p>
+                  <b>Sire:</b> SE U(V)CH SE VCH RLD F RLD N Yxtanejdens Sarek
+                  (Örnbergets Boomerang x Yxtanejdens Octavia) Öga UA IVDD K0
+                  BPH-Genomförd.
+                </p>
+              </div>
+              <div className="dog-paragraph">
+                <BsGenderFemale size={40} className={"gender-icon"} />
+                <p>
+                  <b>Dam:</b> Laverdabooms Skrållan ( Red Top's Tiger Of Sweden
+                  x Laverdabooms My Little Pinkie Pie) CERT CKx2 Öga UA
+                  Bph-Genomförd
+                </p>
+              </div>
               <p>
-                <b>Dam:</b> Laverdabooms Skrållan ( Red Top's Tiger Of Sweden x
-                Laverdabooms My Little Pinkie Pie) CERT CKx2 Öga UA
-                Bph-Genomförd
+                Tack Mlin Sundqvist för att jag fått låna din underbara Sarek &
+                tack Kim Thuner för förtroendet med Skrållan.
               </p>
+              <Link to={"/puppies"}>Läs mer om våra valpar här</Link>
             </div>
-            <p>
-              Tack Mlin Sundqvist för att jag fått låna din underbara Sarek &
-              tack Kim Thuner för förtroendet med Skrållan.
-            </p>
-            <Link to={"/puppies"}>Läs mer om våra valpar här</Link>
           </div>
         </div>
-        {/* <div className="presentation-wrapper">
-          <div className="presentation-container">
-            <div className="presentation-left">
-              <img src={`${assetUrl}utstallning-surahammar.jpg`} />
-            </div>
-            <div className="presentation-right">
-              <h2 className="about-card-heading">Nyheter</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-                tenetur expedita voluptates voluptate sunt labore maxime dolorem
-                excepturi ab nemo?
-                <br />
-                <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sint et, eveniet nesciunt quidem nostrum quos earum labore
-                asperiores nobis quo, excepturi esse perferendis natus ad
-                temporibus saepe. Fuga unde aliquid officiis esse sit, nisi ab!
-                Quia nisi distinctio molestias eveniet.
-              </p>
-            </div>
-          </div>
-          <div className="presentation-second">
-            <h3>Dalarnas Taxklubb Nyhammar</h3>
-            <p>3/30/2023</p>
-            <div className="presentation-list">
-              <p>
-                Judge: <span>Martin Johansson</span>
-              </p>
-              <ul>
-                <li>
-                  <FiAward size={30} />
-                  <p>Huntaks Onyx BOB CAC</p>
-                </li>
-                <li>
-                  <FiAward size={30} />
-                  <p>Laverdabooms Luna Lovegood BOS CAC</p>
-                </li>
-                <li>
-                  <FiAward size={30} />
-                  <p>
-                    Laverdabooms Ginny Weasley BT-2 Res-CAC (Owner: Lotta
-                    Wennberg)
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> */}
-        {/* <div className="partners-container">
-          <div className="partner">
-            <img src={`${assetUrl}k9-comp-logo.png`} />
-          </div>
-          <div className="partner">
-            <img src={`${assetUrl}buddy-logo.png`} />
-          </div>
-        </div> */}
       </div>
     </>
   );

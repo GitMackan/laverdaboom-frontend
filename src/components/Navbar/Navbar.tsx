@@ -10,6 +10,7 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [topScroll, setTopScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState<string>();
 
   const location = useLocation();
 
@@ -20,6 +21,14 @@ const Navbar = () => {
       setTopScroll(true);
     }
   };
+
+  console.log(location);
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setCurrentPage("home");
+    }
+  }, []);
 
   useEffect(() => {
     changeBackground();
@@ -46,14 +55,14 @@ const Navbar = () => {
             <Link
               to={to}
               {...props}
-              style={{
-                color:
-                  location.pathname === "/contact"
-                    ? colors.accent
-                    : topScroll
-                    ? "rgb(36, 35, 35)"
-                    : colors.accent,
-              }}
+              // style={{
+              //   color:
+              //     location.pathname === "/contact"
+              //       ? colors.accent
+              //       : topScroll
+              //       ? "rgb(36, 35, 35)"
+              //       : colors.accent,
+              // }}
             >
               {children}
             </Link>
@@ -78,7 +87,19 @@ const Navbar = () => {
     >
       <div className="navbar-logo">
         <h1 className="logo">
-          <Link to="/">Laverdaboom</Link>
+          <Link
+            to="/"
+            style={{
+              color:
+                location.pathname === "/"
+                  ? !topScroll
+                    ? colors.accent
+                    : colors.grey
+                  : colors.accent,
+            }}
+          >
+            Laverdaboom
+          </Link>
         </h1>
       </div>
       <ul className="navbar-links">
@@ -104,11 +125,23 @@ const Navbar = () => {
               setToggleMenu(true);
               setMenuOpen(true);
             }}
-            color="#324b4c"
+            color={
+              location.pathname === "/"
+                ? !topScroll
+                  ? colors.accent
+                  : colors.grey
+                : colors.accent
+            }
           />
         ) : (
           <BiX
-            color="#324b4c"
+            color={
+              menuOpen
+                ? colors.accent
+                : location.pathname === "/"
+                ? colors.grey
+                : colors.accent
+            }
             className="overlay-close"
             onClick={() => {
               setToggleMenu(false);

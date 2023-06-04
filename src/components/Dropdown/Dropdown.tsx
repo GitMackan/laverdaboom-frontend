@@ -48,9 +48,10 @@ const DropdownMenu = ({
     setIsOpen(!isOpen);
   };
 
+  console.log(options);
+
   return (
     <div ref={dropDownRef} className={"dropDown-container"}>
-      <h4>Hund:</h4>
       <div onClick={toggleList} className={"second"}>
         <div className={"third"}>
           {title &&
@@ -78,22 +79,75 @@ const DropdownMenu = ({
             display: isOpen ? "block" : "none",
           }}
         >
-          {options?.map((item) => (
-            <li
-              id={item.name}
-              onClick={(e) => {
-                setSelectedItem(item.name);
-                setIsOpen(false);
+          <li>
+            <p className="dropdown-heading">Tikar</p>
+          </li>
+          {options
+            ?.filter((e) => e.gender?.toLowerCase() === "tik" && !e.angelDog)
+            .map((item) => (
+              <li
+                id={item.name}
+                onClick={(e) => {
+                  setSelectedItem(item.name);
+                  setIsOpen(false);
 
-                if (setSelected) {
-                  setSelected(item._id);
-                }
-              }}
-              className={"fifth"}
-            >
-              <p className="dropdown-listItem">{item?.name}</p>
-            </li>
-          ))}
+                  if (setSelected) {
+                    setSelected(item._id);
+                  }
+                }}
+                className={"fifth"}
+              >
+                <div>
+                  <p className="dropdown-listItem">{item?.name}</p>
+                </div>
+              </li>
+            ))}
+          <li>
+            <p className="dropdown-heading">Hanar</p>
+          </li>
+          {options
+            ?.filter((e) => e.gender?.toLowerCase() === "hane" && !e.angelDog)
+            .map((item) => (
+              <li
+                id={item.name}
+                onClick={(e) => {
+                  setSelectedItem(item.name);
+                  setIsOpen(false);
+
+                  if (setSelected) {
+                    setSelected(item._id);
+                  }
+                }}
+                className={"fifth"}
+              >
+                <div>
+                  <p className="dropdown-listItem">{item?.name}</p>
+                </div>
+              </li>
+            ))}
+          <li>
+            <p className="dropdown-heading">Änglahundar</p>
+          </li>
+          {options
+            ?.filter((e) => e.gender?.toLowerCase() === "hane" && !e.angelDog)
+            .map((item) => (
+              <li
+                id={item.name}
+                onClick={(e) => {
+                  setSelectedItem(item.name);
+                  setIsOpen(false);
+
+                  if (setSelected) {
+                    setSelected(item._id);
+                  }
+                }}
+                className={"fifth"}
+              >
+                <div>
+                  <p className="dropdown-listItem">{item?.name}</p>
+                </div>
+              </li>
+            ))}
         </ul>
       )}
     </div>

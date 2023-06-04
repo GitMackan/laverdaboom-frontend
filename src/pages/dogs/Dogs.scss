@@ -54,9 +54,21 @@
 @media (max-width: 1150px) {
   .dogs-container {
     flex-direction: column;
+    .all-dogs-container {
+      row-gap: 2rem;
+    }
   }
 
   .all-dogs-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .dogs-container {
+    .all-dogs-container {
+      padding: 0;
+      row-gap: 0rem;
+    }
   }
 }
