@@ -41,6 +41,10 @@ const Update = () => {
 
   axios.defaults.withCredentials = true;
 
+  useEffect(() => {
+    setSelectedImg(undefined);
+  }, [selectedDogId]);
+
   const onSubmit = async (e: any) => {
     e.preventDefault();
     try {
@@ -71,8 +75,10 @@ const Update = () => {
         }
       );
       setSubmitted(!submitted);
+      setSelectedImg(undefined);
     } catch (error) {
       console.log(error);
+      setSelectedImg(undefined);
     }
   };
 
@@ -108,8 +114,10 @@ const Update = () => {
       );
 
       setSubmitted(!submitted);
+      setSelectedImg(undefined);
     } catch (error) {
       console.log(error);
+      setSelectedImg(undefined);
     }
   };
 
@@ -316,41 +324,3 @@ const Update = () => {
 };
 
 export default Update;
-
-{
-  /* <Box flex wrap>
-{searchQuery.phrases?.map(phrase => (
-  <Box flex key={phrase} margin={{ right: 12, bottom: 12 }}>
-    <Box
-      flex
-      className={css`
-        background: ${colors.white};
-        padding: 8px;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        border: 1px solid ${colors.gray4};
-      `}
-    >
-      <Cross12
-        id={'button-remove-estate-search-edit-search-remove-phrase'}
-        onClick={() => {
-          patchSearchQuery({
-            phrases: searchQuery.phrases?.filter(p => p !== phrase),
-          })
-        }}
-        className={css`
-          color: ${colors.gray5};
-          cursor: pointer;
-
-          :hover {
-            color: ${colors.black};
-          }
-        `}
-      />
-      {phrase.toLowerCase()}
-    </Box>
-  </Box>
-))}
-</Box> */
-}

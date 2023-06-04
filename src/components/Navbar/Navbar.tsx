@@ -55,14 +55,14 @@ const Navbar = () => {
             <Link
               to={to}
               {...props}
-              // style={{
-              //   color:
-              //     location.pathname === "/contact"
-              //       ? colors.accent
-              //       : topScroll
-              //       ? "rgb(36, 35, 35)"
-              //       : colors.accent,
-              // }}
+              style={{
+                color:
+                  location.pathname === "/"
+                    ? !topScroll
+                      ? colors.accent
+                      : colors.grey
+                    : colors.accent,
+              }}
             >
               {children}
             </Link>
@@ -90,12 +90,13 @@ const Navbar = () => {
           <Link
             to="/"
             style={{
-              color:
-                location.pathname === "/"
-                  ? !topScroll
-                    ? colors.accent
-                    : colors.grey
-                  : colors.accent,
+              color: menuOpen
+                ? colors.accent
+                : location.pathname === "/"
+                ? !topScroll
+                  ? colors.accent
+                  : colors.grey
+                : colors.accent,
             }}
           >
             Laverdaboom
