@@ -18,7 +18,7 @@ const Dogs = () => {
 
   const getDogs = async () => {
     await axios
-      .get("http://laverdaboom-api.herokuapp.com/dogs")
+      .get("https://laverdaboom-api.herokuapp.com/dogs")
       .then((response) => {
         setDogs(response.data);
       });
