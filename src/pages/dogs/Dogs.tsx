@@ -17,9 +17,11 @@ const Dogs = () => {
   }, []);
 
   const getDogs = async () => {
-    await axios.get("http://localhost:8080/dogs").then((response) => {
-      setDogs(response.data);
-    });
+    await axios
+      .get("http://laverdaboom-api.herokuapp.com/dogs")
+      .then((response) => {
+        setDogs(response.data);
+      });
   };
 
   useEffect(() => {
