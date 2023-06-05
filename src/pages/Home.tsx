@@ -7,6 +7,7 @@ import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
 import { useWindowSize } from "../utility/useWindowSize";
+import Reveal from "../components/Animation.tsx/Reveal";
 
 const Home = () => {
   const screenWidth = useWindowSize().width;
@@ -33,62 +34,74 @@ const Home = () => {
             <div className="news-left">
               <div className="card-heading-container">
                 <div className="dog-paw">
-                  <img src="https://laverdaboom.s3.eu-north-1.amazonaws.com/uploads/dog-paw.png" />
+                  <Reveal>
+                    <img src="https://laverdaboom.s3.eu-north-1.amazonaws.com/uploads/dog-paw.png" />
+                  </Reveal>
                 </div>
-                <h2 className="card-heading">Vilka är vi?</h2>
+                <Reveal>
+                  <h2 className="card-heading">Vilka är vi?</h2>
+                </Reveal>
               </div>
-              <p>
-                Laverdabooms kennel är en liten kennel som föder upp trevliga
-                och sunda hundar i hemmamiljö. Kenneln registrerades 2015 och
-                2016 fick vi vår första kull med långhåriga Standardtaxar. Vi
-                som äger kenneln är Sandra och min mamma Rosa. På fritiden ägnar
-                vi mycket tid till våra hundar och familjen. Rallylydnad,
-                Utställning och viltspår är något vi gillar att aktivera våra
-                hundar med. Vi Strävar efter att avla friska och trevliga hundar
-                och lägger stor vikt i att hitta de perfekta hemmen till våra
-                valpar.
-              </p>
+              <Reveal>
+                <p>
+                  Laverdabooms kennel är en liten kennel som föder upp trevliga
+                  och sunda hundar i hemmamiljö. Kenneln registrerades 2015 och
+                  2016 fick vi vår första kull med långhåriga Standardtaxar. Vi
+                  som äger kenneln är Sandra och min mamma Rosa. På fritiden
+                  ägnar vi mycket tid till våra hundar och familjen.
+                  Rallylydnad, Utställning och viltspår är något vi gillar att
+                  aktivera våra hundar med. Vi Strävar efter att avla friska och
+                  trevliga hundar och lägger stor vikt i att hitta de perfekta
+                  hemmen till våra valpar.
+                </p>
+              </Reveal>
             </div>
             <div className="news-right">
-              <img src={`${assetUrl}laverdaboom.jpeg`} alt="" />
+              <Reveal>
+                <img src={`${assetUrl}laverdaboom.jpeg`} alt="" />
+              </Reveal>
             </div>
           </div>
         </div>
 
         <div className="upcoming-puppies-wrapper">
           <div className="upcoming-puppies">
-            <div className="right">
-              <img src={`${assetUrl}Sarek.jpg`} />
-              <img src={`${assetUrl}skrallan.jpg`} />
-            </div>
-            <div className="left">
-              <h2>Planerad valpkull</h2>
-              <p>
-                Planerad kull på Kennel Laverdaboom. Efter lyckade parningar
-                håller vi nu tummarna för en kull på kenneln i Juli.
-              </p>
-              <div className="dog-paragraph">
-                <BsGenderMale size={40} className={"gender-icon"} />
-                <p>
-                  <b>Sire:</b> SE U(V)CH SE VCH RLD F RLD N Yxtanejdens Sarek
-                  (Örnbergets Boomerang x Yxtanejdens Octavia) Öga UA IVDD K0
-                  BPH-Genomförd.
-                </p>
+            <Reveal>
+              <div className="right">
+                <img src={`${assetUrl}Sarek.jpg`} />
+                <img src={`${assetUrl}skrallan.jpg`} />
               </div>
-              <div className="dog-paragraph">
-                <BsGenderFemale size={40} className={"gender-icon"} />
+            </Reveal>
+            <Reveal>
+              <div className="left">
+                <h2>Planerad valpkull</h2>
                 <p>
-                  <b>Dam:</b> Laverdabooms Skrållan ( Red Top's Tiger Of Sweden
-                  x Laverdabooms My Little Pinkie Pie) CERT CKx2 Öga UA
-                  Bph-Genomförd
+                  Planerad kull på Kennel Laverdaboom. Efter lyckade parningar
+                  håller vi nu tummarna för en kull på kenneln i Juli.
                 </p>
+                <div className="dog-paragraph">
+                  <BsGenderMale size={40} className={"gender-icon"} />
+                  <p>
+                    <b>Sire:</b> SE U(V)CH SE VCH RLD F RLD N Yxtanejdens Sarek
+                    (Örnbergets Boomerang x Yxtanejdens Octavia) Öga UA IVDD K0
+                    BPH-Genomförd.
+                  </p>
+                </div>
+                <div className="dog-paragraph">
+                  <BsGenderFemale size={40} className={"gender-icon"} />
+                  <p>
+                    <b>Dam:</b> Laverdabooms Skrållan ( Red Top's Tiger Of
+                    Sweden x Laverdabooms My Little Pinkie Pie) CERT CKx2 Öga UA
+                    Bph-Genomförd
+                  </p>
+                </div>
+                <p>
+                  Tack Mlin Sundqvist för att jag fått låna din underbara Sarek
+                  & tack Kim Thuner för förtroendet med Skrållan.
+                </p>
+                <Link to={"/puppies"}>Läs mer om våra valpar här</Link>
               </div>
-              <p>
-                Tack Mlin Sundqvist för att jag fått låna din underbara Sarek &
-                tack Kim Thuner för förtroendet med Skrållan.
-              </p>
-              <Link to={"/puppies"}>Läs mer om våra valpar här</Link>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>

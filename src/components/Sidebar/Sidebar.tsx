@@ -2,8 +2,9 @@ import React from "react";
 import "./Sidebar.scss";
 import { DogType } from "../../pages/dogs/Dog";
 import { FiMinus } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
-const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
+const Sidebar = ({ dogs }: SidebarProps) => {
   const maleDogs = dogs?.filter((e) => e.gender?.toLowerCase() === "hane");
   const femaleDogs = dogs?.filter(
     (e) => e.gender?.toLowerCase() === "tik" && e.angelDog !== "true"
@@ -14,16 +15,20 @@ const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
     <div className="sidebar">
       <div className="sidebar-heading">
         {/* <h1>Hundar</h1> */}
-        <p onClick={() => setSelectedDogId(undefined)}>Se alla</p>
+        <Link to={"/dogs"}>
+          <p>Se alla</p>
+        </Link>
       </div>
       <ul>
         <h3>Tikar</h3>
         {femaleDogs?.map((e) => (
           <li key={e._id}>
-            <div>
-              <FiMinus size={10} />
-              <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
-            </div>
+            <Link to={`/dogs/${e.name}`}>
+              <div>
+                <FiMinus size={10} />
+                <p>{e.name}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
@@ -31,10 +36,12 @@ const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
         <h3>Hanar</h3>
         {maleDogs?.map((e) => (
           <li key={e._id}>
-            <div>
-              <FiMinus size={10} />
-              <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
-            </div>
+            <Link to={`/dogs/${e.name}`}>
+              <div>
+                <FiMinus size={10} />
+                <p>{e.name}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
@@ -42,10 +49,12 @@ const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
         <h3>Änglahundar</h3>
         {angelDogs?.map((e) => (
           <li key={e._id}>
-            <div>
-              <FiMinus size={10} />
-              <p onClick={() => setSelectedDogId(e._id)}>{e.name}</p>
-            </div>
+            <Link to={`/dogs/${e.name}`}>
+              <div>
+                <FiMinus size={10} />
+                <p>{e.name}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
@@ -56,6 +65,5 @@ const Sidebar = ({ setSelectedDogId, dogs }: SidebarProps) => {
 export default Sidebar;
 
 interface SidebarProps {
-  setSelectedDogId: React.Dispatch<React.SetStateAction<string | undefined>>;
   dogs: DogType[] | undefined;
 }

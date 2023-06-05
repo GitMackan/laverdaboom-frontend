@@ -22,13 +22,15 @@
 
 .card-heading-container {
   position: relative;
-  width: fit-content;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .dog-paw {
   position: absolute;
   top: -100px;
-  left: -75px;
+  left: 0px;
   width: 200px;
   height: 200px;
   opacity: 10%;
@@ -45,6 +47,7 @@
   margin-bottom: 2rem;
   border-bottom: 0.5px solid $color-detail;
   padding-bottom: 1.5rem;
+  width: fit-content;
 }
 
 .about-card-heading {
@@ -137,7 +140,7 @@
 .news-left,
 .news-right {
   flex: 1;
-  padding: 8rem 2rem;
+  padding: 12rem 2rem 5rem 2rem;
 }
 
 .news-left p,
@@ -147,6 +150,11 @@
   line-height: 2rem;
   font-size: 1rem;
   font-weight: 100;
+}
+
+.news-left p {
+  background: lighten($color-accent, 72);
+  padding: 3rem;
 }
 
 .news-right img {
@@ -408,16 +416,34 @@
     }
   }
   .news-container {
-    padding: 2rem;
-  }
-  .upcoming-puppies {
-    .left {
-      .dog-paragraph {
-        border-bottom: 0.5px solid $color-accent;
-        padding: 1rem 0;
-        b {
-          font-size: 1.1rem;
-          font-weight: 400;
+    padding: 0rem;
+    .news {
+      margin-top: 4rem;
+      flex-direction: column;
+      padding: 3rem 0;
+      width: 100%;
+      gap: 0rem;
+      .news-left {
+        .card-heading-container {
+          .dog-paw {
+            left: 20px;
+          }
+        }
+        p {
+          width: 100%;
+          padding: 1.5rem;
+        }
+      }
+    }
+    .upcoming-puppies {
+      .left {
+        .dog-paragraph {
+          border-bottom: 0.5px solid $color-accent;
+          padding: 1rem 0;
+          b {
+            font-size: 1.1rem;
+            font-weight: 400;
+          }
         }
       }
     }

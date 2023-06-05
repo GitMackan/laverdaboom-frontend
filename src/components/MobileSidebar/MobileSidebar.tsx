@@ -3,14 +3,10 @@ import { DogType } from "../../pages/dogs/Dog";
 import DropdownMenu from "../Dropdown/Dropdown";
 import "./MobileSidebar.scss";
 
-const MobileSidebar = ({ setSelectedDogId, dogs }: MobileSidebarProps) => {
+const MobileSidebar = ({ dogs }: MobileSidebarProps) => {
   return (
     <div>
-      <DropdownMenu
-        options={dogs}
-        setSelected={setSelectedDogId}
-        title="Välj hund"
-      />
+      <DropdownMenu options={dogs} title="Välj hund" />
     </div>
   );
 };
@@ -18,6 +14,5 @@ const MobileSidebar = ({ setSelectedDogId, dogs }: MobileSidebarProps) => {
 export default MobileSidebar;
 
 interface MobileSidebarProps {
-  setSelectedDogId: React.Dispatch<React.SetStateAction<string | undefined>>;
   dogs: DogType[] | undefined;
 }

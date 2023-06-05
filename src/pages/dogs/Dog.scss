@@ -49,8 +49,8 @@
   color: $color-accent;
   font-size: 1rem;
   align-self: center;
-  background-color: $color-accent;
-  color: $color-grey;
+
+  color: $color-accent;
   align-items: center;
   width: 80%;
   height: auto;
@@ -109,21 +109,24 @@
 
 .description {
   margin: 0 auto;
-  background: $color-accent;
-  color: $color-grey;
+  background: lighten($color-accent, 70);
+  color: $color-accent;
   font-family: $font-secondary;
   font-size: 1.1rem;
   padding: 3rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .description-text {
-  border-bottom: 1px solid $color-detail;
-  padding-bottom: 1rem;
+  border-bottom: 0.5px solid $color-detail;
+  padding-bottom: 0.5rem;
   font-weight: 100;
   line-height: 1.8rem;
+  width: 70%;
+  text-align: center;
 }
 
 .titles {
@@ -165,6 +168,10 @@
 @media (max-width: 1100px) {
   .description {
     width: 100%;
+
+    .description-text {
+      width: 80%;
+    }
   }
 
   .dog-info {

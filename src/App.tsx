@@ -12,6 +12,7 @@ import "./styles.scss";
 import Puppies from "./pages/Puppies";
 import { useEffect } from "react";
 import ga4 from "react-ga4";
+import Dog from "./pages/dogs/Dog";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -40,6 +41,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/dogs" element={<Dogs />} />
+            <Route path="/dogs/:id" element={<Dog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/admin" element={<Admin />} />

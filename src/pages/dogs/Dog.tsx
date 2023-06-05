@@ -3,6 +3,13 @@ import ImageGallery from "react-image-gallery";
 import { FaCircle } from "react-icons/fa";
 import { FiAward } from "react-icons/fi";
 import "./Dog.scss";
+import Reveal from "../../components/Animation.tsx/Reveal";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import { useWindowSize } from "../../utility/useWindowSize";
+import MobileSidebar from "../../components/MobileSidebar/MobileSidebar";
 
 export type DogType = {
   _id: string;
@@ -23,153 +30,181 @@ export type DogType = {
   image: string[];
 };
 
-const Dog = ({ dog }: DogProps) => {
-  const currentDog = dog && dog[0];
+const Dog = () => {
+  const [dog, setDog] = useState<DogType>();
+  const [dogs, setDogs] = useState<DogType[]>();
+  const [selectedDogId, setSelectedDogId] = useState<DogType["_id"]>();
+  const params = useParams();
+  const windowWidth = useWindowSize().width;
+  console.log(params);
 
-  const images: any = currentDog?.image.map((e) => ({
+  useEffect(() => {
+    getDogs();
+    getDog();
+  }, [params]);
+
+  const getDog = async () => {
+    await axios
+      .get(`http://localhost:8080/dogs/${params.id}`)
+      .then((response) => {
+        setDog(response.data);
+      });
+  };
+
+  const getDogs = async () => {
+    await axios.get("http://localhost:8080/dogs").then((response) => {
+      setDogs(response.data);
+    });
+  };
+
+  const images: any = dog?.image.map((e) => ({
     original: `${assetUrl}${e}`,
     thumbnail: `${assetUrl}${e}`,
   }));
 
   return (
     <div className="dog-wrapper">
-      <div className="dog-container">
-        <h1>{currentDog?.name}</h1>
-        <div className="dog-main-image ">
-          {currentDog?.image && (
-            <div className="gallery">
-              <ImageGallery
-                items={images}
-                showBullets={true}
-                showPlayButton={false}
-                autoPlay={false}
-              />
-            </div>
-          )}
-        </div>
-        <div className="presentation">
-          <div className="dog-info">
-            <ul>
-              {currentDog?.regNr && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">Reg.nr:</p>
-                      <p className="dog-info-body">{currentDog.regNr}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-              {currentDog?.breed && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">Ras:</p>
-                      <p className="dog-info-body">{currentDog.breed}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-              {currentDog?.gender && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">Kön:</p>
-                      <p className="dog-info-body">{currentDog.gender}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-              {currentDog?.hairType && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">Hårlag:</p>
-                      <p className="dog-info-body">{currentDog.hairType}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-              {currentDog?.color && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">Färg:</p>
-                      <p className="dog-info-body">{currentDog.color}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-              {currentDog?.IVDD && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">Ivdd:</p>
-                      <p className="dog-info-body">{currentDog.IVDD}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-              {currentDog?.BPH && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">BPH:</p>
-                      <p className="dog-info-body">{currentDog.BPH}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-              {currentDog?.eye && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">Ögon:</p>
-                      <p className="dog-info-body">{currentDog.eye}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-              {currentDog?.birthDate && (
-                <li>
-                  <div className="dog-info-container">
-                    {/* <FiAward size={24} /> */}
-                    <div>
-                      <p className="dog-info-heading">Födelsedatum:</p>
-                      <p className="dog-info-body">{currentDog.birthDate}</p>
-                    </div>
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
-
-          {currentDog?.description && (
-            <div className="description">
-              <p className="description-text">{currentDog.description}</p>
-            </div>
-          )}
-          {currentDog?.titles && currentDog?.titles?.length > 0 && (
-            <div className="titles">
-              <h5>Titlar & Meriter</h5>
-              <div className="titles-container">
-                {currentDog.titles.map((e) => (
-                  <div className="title">
-                    <FiAward color={"#324b4c"} size={24} />
-                    <p>{e}</p>
-                  </div>
-                ))}
+      <div className="dogs-container">
+        {windowWidth && windowWidth < 1150 ? (
+          <MobileSidebar dogs={dogs} />
+        ) : (
+          <Sidebar dogs={dogs} />
+        )}
+        <div className="dog-container">
+          <h1>{dog?.name}</h1>
+          <div className="dog-main-image ">
+            {dog?.image && (
+              <div className="gallery">
+                <ImageGallery
+                  items={images}
+                  showBullets={true}
+                  showPlayButton={false}
+                  autoPlay={false}
+                />
               </div>
+            )}
+          </div>
+          <div className="presentation">
+            <div className="dog-info">
+              <ul>
+                {dog?.regNr && (
+                  // <Reveal>
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">Reg.nr:</p>
+                        <p className="dog-info-body">{dog.regNr}</p>
+                      </div>
+                    </div>
+                  </li>
+                  // </Reveal>
+                )}
+                {dog?.breed && (
+                  // <Reveal>
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">Ras:</p>
+                        <p className="dog-info-body">{dog.breed}</p>
+                      </div>
+                    </div>
+                  </li>
+                  // </Reveal>
+                )}
+                {dog?.gender && (
+                  // <Reveal>
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">Kön:</p>
+                        <p className="dog-info-body">{dog.gender}</p>
+                      </div>
+                    </div>
+                  </li>
+                  //  </Reveal>
+                )}
+                {dog?.hairType && (
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">Hårlag:</p>
+                        <p className="dog-info-body">{dog.hairType}</p>
+                      </div>
+                    </div>
+                  </li>
+                )}
+                {dog?.color && (
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">Färg:</p>
+                        <p className="dog-info-body">{dog.color}</p>
+                      </div>
+                    </div>
+                  </li>
+                )}
+                {dog?.IVDD && (
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">Ivdd:</p>
+                        <p className="dog-info-body">{dog.IVDD}</p>
+                      </div>
+                    </div>
+                  </li>
+                )}
+                {dog?.BPH && (
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">BPH:</p>
+                        <p className="dog-info-body">{dog.BPH}</p>
+                      </div>
+                    </div>
+                  </li>
+                )}
+                {dog?.eye && (
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">Ögon:</p>
+                        <p className="dog-info-body">{dog.eye}</p>
+                      </div>
+                    </div>
+                  </li>
+                )}
+                {dog?.birthDate && (
+                  <li>
+                    <div className="dog-info-container">
+                      <div>
+                        <p className="dog-info-heading">Födelsedatum:</p>
+                        <p className="dog-info-body">{dog.birthDate}</p>
+                      </div>
+                    </div>
+                  </li>
+                )}
+              </ul>
             </div>
-          )}
+
+            {dog?.description && (
+              <div className="description">
+                <p className="description-text">{dog.description}</p>
+              </div>
+            )}
+            {dog?.titles && dog?.titles?.length > 0 && (
+              <div className="titles">
+                <h5>Titlar & Meriter</h5>
+                <div className="titles-container">
+                  {dog?.titles.map((e) => (
+                    <div className="title">
+                      <FiAward color={"#324b4c"} size={24} />
+                      <p>{e}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -179,5 +214,5 @@ const Dog = ({ dog }: DogProps) => {
 export default Dog;
 
 interface DogProps {
-  dog: DogType[] | undefined;
+  dog?: DogType[] | undefined;
 }
