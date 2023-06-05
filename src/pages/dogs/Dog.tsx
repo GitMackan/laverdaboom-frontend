@@ -45,16 +45,18 @@ const Dog = () => {
 
   const getDog = async () => {
     await axios
-      .get(`http://localhost:8080/dogs/${params.id}`)
+      .get(`https://laverdaboom-api.herokuapp.com/dogs/${params.id}`)
       .then((response) => {
         setDog(response.data);
       });
   };
 
   const getDogs = async () => {
-    await axios.get("http://localhost:8080/dogs").then((response) => {
-      setDogs(response.data);
-    });
+    await axios
+      .get("https://laverdaboom-api.herokuapp.com/dogs")
+      .then((response) => {
+        setDogs(response.data);
+      });
   };
 
   const images: any = dog?.image.map((e) => ({
