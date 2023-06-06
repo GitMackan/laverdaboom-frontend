@@ -7,6 +7,8 @@ const Reveal = ({ children }: AnimationProps) => {
 
   const mainControls = useAnimation();
 
+  console.log(isInView);
+
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
@@ -16,12 +18,13 @@ const Reveal = ({ children }: AnimationProps) => {
     <div ref={ref}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 },
+          hidden: { left: "-100%" },
+          visible: { left: "50%" },
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1, ease: "easeIn" }}
+        style={{ position: "absolute" }}
       >
         {children}
       </motion.div>

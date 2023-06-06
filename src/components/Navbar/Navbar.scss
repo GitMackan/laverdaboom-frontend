@@ -122,6 +122,11 @@
   color: $color-dark;
 }
 
+.hamburger-btn {
+  z-index: 999;
+  transition: color 0.3s ease-in;
+}
+
 .navbar-smallscreen_links li a {
   color: $color-accent;
   font-family: $font-secondary;

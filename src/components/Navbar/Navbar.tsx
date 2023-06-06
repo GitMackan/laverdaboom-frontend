@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BiX } from "react-icons/bi";
 import { FiAlignRight } from "react-icons/fi";
 import { Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 import { colors } from "../../assets/constants";
 import { scroller } from "react-scroll";
 import "./Navbar.scss";
+import MobileNavReveal from "../Animation.tsx/MobileNavReveal";
+import Reveal from "../Animation.tsx/Reveal";
+import HamburgerButton from "../HamburgerButton/HamburgerButton";
+import { Sling as Hamburger } from "hamburger-react";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [topScroll, setTopScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState<string>();
+  const hamburgerRef = useRef<any>(null);
+  const bar1 = useRef<any>(null);
+  const bar2 = useRef<any>(null);
+  const bar3 = useRef<any>(null);
 
   const location = useLocation();
 
@@ -19,6 +27,34 @@ const Navbar = () => {
       setTopScroll(false);
     } else {
       setTopScroll(true);
+    }
+  };
+
+  const handleHamburgerClick = () => {
+    console.log("hej");
+    if (hamburgerRef.current && bar1.current && bar2.current && bar3.current) {
+      if (menuOpen) {
+        bar1.current.velocity(
+          { top: "50%" },
+          { duration: 200, easing: "swing" }
+        );
+        bar3.current
+          .velocity({ top: "50%" }, { duration: 200, easing: "swing" })
+          .velocity(
+            { rotateZ: "90deg" },
+            { duration: 800, delay: 200, easing: [500, 20] }
+          );
+        hamburgerRef.current.velocity(
+          { rotateZ: "135deg" },
+          { duration: 800, delay: 200, easing: [500, 20] }
+        );
+      } else {
+        hamburgerRef.current.velocity("reverse");
+        bar3.current
+          .velocity({ rotateZ: "0deg" }, { duration: 800, easing: [500, 20] })
+          .velocity({ top: "100%" }, { duration: 200, easing: "swing" });
+        bar1.current.velocity("reverse", { delay: 800 });
+      }
     }
   };
 
@@ -104,11 +140,9 @@ const Navbar = () => {
         </h1>
       </div>
       <ul className="navbar-links">
-        {/* <div className="nav-item">
-          <CustomLink to="/#news" reload={true}>
-            Om oss
-          </CustomLink>
-        </div> */}
+        <div className="nav-item">
+          <CustomLink to="/">Hem</CustomLink>
+        </div>
         <div className="nav-item">
           <CustomLink to="/dogs">Våra hundar</CustomLink>
         </div>
@@ -120,80 +154,58 @@ const Navbar = () => {
         </div>
       </ul>
       <div className="navbar-smallscreen">
-        {!menuOpen ? (
-          <FiAlignRight
-            onClick={() => {
-              setToggleMenu(true);
-              setMenuOpen(true);
-            }}
-            color={
-              location.pathname === "/"
-                ? !topScroll
-                  ? colors.accent
-                  : colors.grey
-                : colors.accent
-            }
-          />
-        ) : (
-          <BiX
-            color={
-              menuOpen
+        <div
+          className="hamburger-btn "
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{
+            color: menuOpen
+              ? colors.accent
+              : location.pathname === "/"
+              ? !topScroll
                 ? colors.accent
-                : location.pathname === "/"
-                ? colors.grey
-                : colors.accent
-            }
-            className="overlay-close"
-            onClick={() => {
-              setToggleMenu(false);
-              setMenuOpen(false);
-            }}
-          />
-        )}
-
-        {/* {menuOpen && ( */}
+                : colors.grey
+              : colors.accent,
+          }}
+        >
+          <Hamburger direction="left" />
+        </div>
         <div
           className={`navbar-smallscreen_overlay ${
             menuOpen ? "overlay-open" : ""
           }`}
         >
-          {/* <BiX
-            color="#324b4c"
-            className="overlay-close"
-            onClick={() => {
-              setToggleMenu(false);
-              setMenuOpen(false);
-            }}
-          /> */}
           <ul className="navbar-smallscreen_links">
             <li>
-              <Link to="/" onClick={() => setMenuOpen(false)}>
-                Hem
-              </Link>
+              <Reveal>
+                <Link to="/" onClick={() => setMenuOpen(false)}>
+                  Hem
+                </Link>
+              </Reveal>
             </li>
-            {/* <li>
-              <Link to="/#news" onClick={() => setMenuOpen(false)}>
-                Om oss
-              </Link>
-            </li> */}
+
             <li>
-              <Link to="/dogs" onClick={() => setMenuOpen(false)}>
-                Våra hundar
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" onClick={() => setMenuOpen(false)}>
-                Kontakt
-              </Link>
+              <Reveal>
+                <Link to="/dogs" onClick={() => setMenuOpen(false)}>
+                  Våra hundar
+                </Link>
+              </Reveal>
             </li>
             <li>
-              <Link to="/puppies" onClick={() => setMenuOpen(false)}>
-                Valpar
-              </Link>
+              <Reveal>
+                <Link to="/puppies" onClick={() => setMenuOpen(false)}>
+                  Valpar
+                </Link>
+              </Reveal>
+            </li>
+            <li>
+              <Reveal>
+                <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                  Kontakt
+                </Link>
+              </Reveal>
             </li>
           </ul>
         </div>
-        {/* )} */}
       </div>
     </nav>
   );

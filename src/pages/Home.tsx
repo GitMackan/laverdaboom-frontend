@@ -66,42 +66,59 @@ const Home = () => {
 
         <div className="upcoming-puppies-wrapper">
           <div className="upcoming-puppies">
-            <Reveal>
-              <div className="right">
+            <div className="right">
+              <Reveal>
                 <img src={`${assetUrl}Sarek.jpg`} />
+              </Reveal>
+              <Reveal>
                 <img src={`${assetUrl}skrallan.jpg`} />
-              </div>
-            </Reveal>
-            <Reveal>
-              <div className="left">
+              </Reveal>
+            </div>
+
+            <div className="left">
+              <Reveal>
                 <h2>Planerad valpkull</h2>
+              </Reveal>
+              <Reveal>
                 <p>
                   Planerad kull på Kennel Laverdaboom. Efter lyckade parningar
                   håller vi nu tummarna för en kull på kenneln i Juli.
                 </p>
-                <div className="dog-paragraph">
+              </Reveal>
+              <div className="dog-paragraph">
+                <Reveal>
                   <BsGenderMale size={40} className={"gender-icon"} />
+                </Reveal>
+                <Reveal>
                   <p>
                     <b>Sire:</b> SE U(V)CH SE VCH RLD F RLD N Yxtanejdens Sarek
                     (Örnbergets Boomerang x Yxtanejdens Octavia) Öga UA IVDD K0
                     BPH-Genomförd.
                   </p>
-                </div>
-                <div className="dog-paragraph">
+                </Reveal>
+              </div>
+              <div className="dog-paragraph">
+                <Reveal>
                   <BsGenderFemale size={40} className={"gender-icon"} />
+                </Reveal>
+                <Reveal>
                   <p>
                     <b>Dam:</b> Laverdabooms Skrållan ( Red Top's Tiger Of
                     Sweden x Laverdabooms My Little Pinkie Pie) CERT CKx2 Öga UA
                     Bph-Genomförd
                   </p>
-                </div>
+                </Reveal>
+              </div>
+              <Reveal>
                 <p>
                   Tack Mlin Sundqvist för att jag fått låna din underbara Sarek
                   & tack Kim Thuner för förtroendet med Skrållan.
                 </p>
+              </Reveal>
+              <Reveal>
                 <Link to={"/puppies"}>Läs mer om våra valpar här</Link>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
         </div>
       </div>
