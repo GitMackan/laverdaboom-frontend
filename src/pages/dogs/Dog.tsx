@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { useWindowSize } from "../../utility/useWindowSize";
 import MobileSidebar from "../../components/MobileSidebar/MobileSidebar";
+import { Parent } from "../admin/Update";
 
 export type DogType = {
   _id: string;
@@ -28,6 +29,7 @@ export type DogType = {
   angelDog?: string;
   titles?: string[];
   image: string[];
+  pedigree: Parent[];
 };
 
 const Dog = () => {
@@ -63,6 +65,8 @@ const Dog = () => {
     original: `${assetUrl}${e}`,
     thumbnail: `${assetUrl}${e}`,
   }));
+
+  console.log(dog?.pedigree[0].titles.join(" "));
 
   return (
     <div className="dog-wrapper">
@@ -207,6 +211,77 @@ const Dog = () => {
               </div>
             )}
           </div>
+          {dog?.pedigree && dog.pedigree.length > 0 && (
+            <div className="pedigree-wrapper">
+              <div className="pedigree-container">
+                <h2>Stamtavla</h2>
+                <div className="pedigree-grid">
+                  <div className="column">
+                    <div className="row">
+                      <span>{dog?.pedigree[0].titles.join(" ")}</span>
+                      <p>{dog.pedigree[0].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[1]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[1].name}</p>
+                    </div>
+                  </div>
+                  <div className="column">
+                    <div className="row">
+                      <span>{dog?.pedigree[2]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[2].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[3]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[3].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[4]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[4].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[5]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[5].name}</p>
+                    </div>
+                  </div>
+                  <div className="column">
+                    <div className="row">
+                      <span>{dog?.pedigree[6]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[6].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[7]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[7].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[8]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[8].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[9]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[9].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[10]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[10].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[11]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[11].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[12]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[12].name}</p>
+                    </div>
+                    <div className="row">
+                      <span>{dog?.pedigree[13]?.titles?.join(" ")}</span>
+                      <p>{dog.pedigree[13].name}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

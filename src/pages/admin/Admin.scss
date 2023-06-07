@@ -58,6 +58,26 @@
   }
 }
 
+.pedigree-container {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 3rem 0;
+  h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  .generation {
+    margin-bottom: 3rem;
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+}
+
 .removeBtn {
   margin-top: 2rem;
   background: red;
@@ -171,5 +191,29 @@
   margin-top: 3rem;
   img {
     max-width: 100%;
+  }
+}
+
+.pedigree {
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  input {
+    margin-bottom: 2rem;
+  }
+  .parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+    .parent-in-pedigree {
+      border: 1px solid black;
+      padding: 1rem;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
   }
 }

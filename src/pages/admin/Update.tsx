@@ -4,6 +4,14 @@ import { useCookies } from "react-cookie";
 import { assetUrl } from "../../assets/constants";
 import { DogType } from "../dogs/Dog";
 import { FiX } from "react-icons/fi";
+import PedigreeModal from "../../components/PedigreeModal/PedigreeModal";
+
+export type Parent = {
+  name: string;
+  titles: string[];
+};
+
+export type Pedigree = Parent[];
 
 const Update = () => {
   const [dogs, setDogs] = useState<DogType[] | undefined>();
@@ -26,18 +34,17 @@ const Update = () => {
   const cookie = cookies["LAVERDABOOM-AUTH"];
   const [submitted, setSubmitted] = useState(false);
   const [newTitle, setNewTitle] = useState<string>("");
+  const [newParentName, setNewParentName] = useState<string>("");
+  const [pedigree, setPedigree] = useState<Pedigree>([]);
+  const [chosenParent, setChosenParent] = useState<Parent>();
+  const [openModal, setOpenModal] = useState(false);
+  const [index, setIndex] = useState<number>();
 
   const handleImageChange = (event: any) => {
     setImage(event.target.files[0]);
   };
 
-  // const api = axios.create({
-  //   withCredentials: true,
-  //   headers: {
-  //     "Content-Type": "multipart/form-data",
-  //     cookie: `cookie1=cookie`,
-  //   },
-  // });
+  console.log(pedigree);
 
   axios.defaults.withCredentials = true;
 
@@ -67,6 +74,7 @@ const Update = () => {
           file: image && image,
           titles: titles && titles,
           sessionToken: cookie,
+          pedigree: pedigree && pedigree,
         },
         {
           headers: {
@@ -107,6 +115,7 @@ const Update = () => {
           image: newImages,
           titles: titles && titles,
           sessionToken: cookie,
+          pedigree: pedigree && pedigree,
         },
         {
           headers: {
@@ -136,6 +145,8 @@ const Update = () => {
     (e) => e._id.toLowerCase() === selectedDogId?.toLowerCase()
   );
 
+  console.log(dogs);
+
   useEffect(() => {
     if (selectedDog) {
       setName(selectedDog.name || undefined);
@@ -150,6 +161,7 @@ const Update = () => {
       setBirthDate(selectedDog.birthDate);
       setDescription(selectedDog.description);
       setTitles(selectedDog.titles as string[]);
+      setPedigree(selectedDog.pedigree);
     }
   }, [selectedDogId]);
 
@@ -263,6 +275,69 @@ const Update = () => {
                   value={description ? description : ""}
                   onChange={(e) => setDescription(e.target.value)}
                 />
+              </div>
+              <div className="pedigree">
+                <div className="input-field-container">
+                  <label htmlFor="">Stamtavla:</label>
+                  <div className="parent-container">
+                    {pedigree.length > 0 &&
+                      pedigree.map((e, i) => (
+                        <div key={i} className="parent-in-pedigree">
+                          <p
+                            style={{ cursor: "pointer" }}
+                            onClick={() => {
+                              setChosenParent(pedigree[i]);
+                              setIndex(i);
+                              setOpenModal(true);
+                            }}
+                          >
+                            {e.name}
+                          </p>
+                          <FiX
+                            size={20}
+                            style={{ cursor: "pointer", marginLeft: "10px" }}
+                            onClick={() =>
+                              setPedigree(
+                                pedigree.filter(
+                                  (parent) => parent.name !== e.name
+                                )
+                              )
+                            }
+                          />
+                        </div>
+                      ))}
+                  </div>
+
+                  <label htmlFor="">Namn:</label>
+                  <input
+                    type="text"
+                    value={newParentName ? newParentName : ""}
+                    onChange={(e) => setNewParentName(e.target.value)}
+                  />
+
+                  <button
+                    className="title-btn"
+                    onClick={() => {
+                      setPedigree((prevState) => [
+                        ...prevState,
+                        { name: newParentName, titles: [] },
+                      ]);
+                      setNewParentName("");
+                    }}
+                  >
+                    Lägg till förälder
+                  </button>
+                </div>
+                {chosenParent && (
+                  <PedigreeModal
+                    openModal={openModal}
+                    setOpenModal={setOpenModal}
+                    chosenParent={chosenParent}
+                    pedigree={pedigree}
+                    setPedigree={setPedigree}
+                    index={index as number}
+                  />
+                )}
               </div>
               <div className="input-field-container">
                 <label htmlFor="">Titlar:</label>

@@ -8,7 +8,7 @@ import "./Navbar.scss";
 import MobileNavReveal from "../Animation.tsx/MobileNavReveal";
 import Reveal from "../Animation.tsx/Reveal";
 import HamburgerButton from "../HamburgerButton/HamburgerButton";
-import { Sling as Hamburger } from "hamburger-react";
+import Hamburger from "hamburger-react";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -29,36 +29,6 @@ const Navbar = () => {
       setTopScroll(true);
     }
   };
-
-  const handleHamburgerClick = () => {
-    console.log("hej");
-    if (hamburgerRef.current && bar1.current && bar2.current && bar3.current) {
-      if (menuOpen) {
-        bar1.current.velocity(
-          { top: "50%" },
-          { duration: 200, easing: "swing" }
-        );
-        bar3.current
-          .velocity({ top: "50%" }, { duration: 200, easing: "swing" })
-          .velocity(
-            { rotateZ: "90deg" },
-            { duration: 800, delay: 200, easing: [500, 20] }
-          );
-        hamburgerRef.current.velocity(
-          { rotateZ: "135deg" },
-          { duration: 800, delay: 200, easing: [500, 20] }
-        );
-      } else {
-        hamburgerRef.current.velocity("reverse");
-        bar3.current
-          .velocity({ rotateZ: "0deg" }, { duration: 800, easing: [500, 20] })
-          .velocity({ top: "100%" }, { duration: 200, easing: "swing" });
-        bar1.current.velocity("reverse", { delay: 800 });
-      }
-    }
-  };
-
-  console.log(location);
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -115,7 +85,7 @@ const Navbar = () => {
       style={{
         background:
           location.pathname === "/contact"
-            ? colors.grey
+            ? "#FFF"
             : topScroll
             ? "transparent"
             : "#FFF",
