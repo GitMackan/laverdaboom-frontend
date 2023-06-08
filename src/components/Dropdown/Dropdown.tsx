@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-// import { AngleDown12 } from "../icons/AngleDown12";
-// import { AngleUp12 } from "../icons/AngleUp12";
 import { FiArrowDown, FiArrowUp } from "react-icons/fi";
 import { Link, useParams } from "react-router-dom";
 import { DogType } from "../../pages/dogs/Dog";
@@ -29,19 +27,9 @@ export function useOutsideAlerter(ref: any, setState: any) {
   }, [ref]);
 }
 
-const DropdownMenu = ({
-  options,
-  title,
-  label,
-  onChange,
-  name,
-}: DropdownMenuProps) => {
+const DropdownMenu = ({ options }: DropdownMenuProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedItem, setSelectedItem] = useState<string | undefined>(
-    undefined
-  );
   const params = useParams();
-  console.log(params);
 
   const dropDownRef = useRef(null);
   useOutsideAlerter(dropDownRef, setIsOpen);
@@ -53,8 +41,6 @@ const DropdownMenu = ({
   useEffect(() => {
     setIsOpen(false);
   }, [params]);
-
-  console.log(options);
 
   return (
     <div ref={dropDownRef} className={"dropDown-container"}>
@@ -73,7 +59,7 @@ const DropdownMenu = ({
             display: isOpen ? "block" : "none",
           }}
         >
-          <li>
+          <li style={{ background: "red" }}>
             <p className="dropdown-heading">Tikar</p>
           </li>
           {options

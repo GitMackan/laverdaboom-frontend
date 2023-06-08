@@ -11,6 +11,9 @@
   background-attachment: fixed;
   background-position: center;
   background-blend-mode: multiply;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   display: flex;
   align-items: center;
 

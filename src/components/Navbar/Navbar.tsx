@@ -1,24 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BiX } from "react-icons/bi";
-import { FiAlignRight } from "react-icons/fi";
 import { Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 import { colors } from "../../assets/constants";
-import { scroller } from "react-scroll";
 import "./Navbar.scss";
-import MobileNavReveal from "../Animation.tsx/MobileNavReveal";
 import Reveal from "../Animation.tsx/Reveal";
-import HamburgerButton from "../HamburgerButton/HamburgerButton";
 import Hamburger from "hamburger-react";
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
   const [topScroll, setTopScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState<string>();
-  const hamburgerRef = useRef<any>(null);
-  const bar1 = useRef<any>(null);
-  const bar2 = useRef<any>(null);
-  const bar3 = useRef<any>(null);
 
   const location = useLocation();
 
@@ -29,12 +18,6 @@ const Navbar = () => {
       setTopScroll(true);
     }
   };
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setCurrentPage("home");
-    }
-  }, []);
 
   useEffect(() => {
     changeBackground();
@@ -126,7 +109,6 @@ const Navbar = () => {
       <div className="navbar-smallscreen">
         <div
           className="hamburger-btn "
-          onClick={() => setMenuOpen(!menuOpen)}
           style={{
             color: menuOpen
               ? colors.accent
@@ -137,7 +119,11 @@ const Navbar = () => {
               : colors.accent,
           }}
         >
-          <Hamburger direction="left" />
+          <Hamburger
+            direction="left"
+            onToggle={() => setMenuOpen(!menuOpen)}
+            toggled={menuOpen}
+          />
         </div>
         <div
           className={`navbar-smallscreen_overlay ${

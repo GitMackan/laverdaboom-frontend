@@ -1,8 +1,3 @@
-import React from "react";
-import { FaArrowDown } from "react-icons/fa";
-import { Parallax } from "react-scroll-parallax";
-import Reveal from "../Animation.tsx/Reveal";
-
 import "./Herosection.scss";
 
 const HeroSection = () => {

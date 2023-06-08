@@ -10,6 +10,10 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
+  ul {
+    max-height: 70vh;
+    overflow: scroll;
+  }
   h4 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
