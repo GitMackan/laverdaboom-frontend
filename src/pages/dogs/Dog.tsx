@@ -74,136 +74,159 @@ const Dog = () => {
         ) : (
           <Sidebar dogs={dogs} />
         )}
+
         <div className="dog-container">
-          <h1>{dog?.name}</h1>
+          <Reveal>
+            <h1>{dog?.name}</h1>
+          </Reveal>
           <div className="dog-main-image ">
             {dog?.image && (
-              <div className="gallery">
-                <ImageGallery
-                  items={images}
-                  showBullets={true}
-                  showPlayButton={false}
-                  autoPlay={false}
-                />
-              </div>
+              <Reveal>
+                <div className="gallery">
+                  <ImageGallery
+                    items={images}
+                    showBullets={true}
+                    showPlayButton={false}
+                    autoPlay={false}
+                  />
+                </div>
+              </Reveal>
             )}
           </div>
           <div className="presentation">
             <div className="dog-info">
               <ul>
                 {dog?.regNr && (
-                  // <Reveal>
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">Reg.nr:</p>
-                        <p className="dog-info-body">{dog.regNr}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">Reg.nr:</p>
+                          <p className="dog-info-body">{dog.regNr}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  // </Reveal>
+                    </li>
+                  </Reveal>
                 )}
                 {dog?.breed && (
-                  // <Reveal>
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">Ras:</p>
-                        <p className="dog-info-body">{dog.breed}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">Ras:</p>
+                          <p className="dog-info-body">{dog.breed}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  // </Reveal>
+                    </li>
+                  </Reveal>
                 )}
                 {dog?.gender && (
-                  // <Reveal>
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">Kön:</p>
-                        <p className="dog-info-body">{dog.gender}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">Kön:</p>
+                          <p className="dog-info-body">{dog.gender}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  //  </Reveal>
+                    </li>
+                  </Reveal>
                 )}
                 {dog?.hairType && (
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">Hårlag:</p>
-                        <p className="dog-info-body">{dog.hairType}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">Hårlag:</p>
+                          <p className="dog-info-body">{dog.hairType}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  </Reveal>
                 )}
                 {dog?.color && (
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">Färg:</p>
-                        <p className="dog-info-body">{dog.color}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">Färg:</p>
+                          <p className="dog-info-body">{dog.color}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  </Reveal>
                 )}
                 {dog?.IVDD && (
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">Ivdd:</p>
-                        <p className="dog-info-body">{dog.IVDD}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">Ivdd:</p>
+                          <p className="dog-info-body">{dog.IVDD}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  </Reveal>
                 )}
                 {dog?.BPH && (
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">BPH:</p>
-                        <p className="dog-info-body">{dog.BPH}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">BPH:</p>
+                          <p className="dog-info-body">{dog.BPH}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  </Reveal>
                 )}
                 {dog?.eye && (
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">Ögon:</p>
-                        <p className="dog-info-body">{dog.eye}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">Ögon:</p>
+                          <p className="dog-info-body">{dog.eye}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  </Reveal>
                 )}
                 {dog?.birthDate && (
-                  <li>
-                    <div className="dog-info-container">
-                      <div>
-                        <p className="dog-info-heading">Födelsedatum:</p>
-                        <p className="dog-info-body">{dog.birthDate}</p>
+                  <Reveal>
+                    <li>
+                      <div className="dog-info-container">
+                        <div>
+                          <p className="dog-info-heading">Födelsedatum:</p>
+                          <p className="dog-info-body">{dog.birthDate}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  </Reveal>
                 )}
               </ul>
             </div>
 
             {dog?.description && (
-              <div className="description">
-                <p className="description-text">{dog.description}</p>
-              </div>
+              <Reveal>
+                <div className="description">
+                  <p className="description-text">{dog.description}</p>
+                </div>
+              </Reveal>
             )}
             {dog?.titles && dog?.titles?.length > 0 && (
               <div className="titles">
-                <h5>Titlar & Meriter</h5>
+                <Reveal>
+                  <h5>Titlar & Meriter</h5>
+                </Reveal>
                 <div className="titles-container">
                   {dog?.titles.map((e) => (
-                    <div className="title">
-                      <FiAward color={"#324b4c"} size={24} />
-                      <p>{e}</p>
-                    </div>
+                    <Reveal>
+                      <div className="title">
+                        <FiAward color={"#324b4c"} size={24} />
+                        <p>{e}</p>
+                      </div>
+                    </Reveal>
                   ))}
                 </div>
               </div>
@@ -212,71 +235,75 @@ const Dog = () => {
           {dog?.pedigree && dog.pedigree.length > 0 && (
             <div className="pedigree-wrapper">
               <div className="pedigree-container">
-                <h2>Stamtavla</h2>
-                <div className="pedigree-grid">
-                  <div className="column">
-                    <div className="row">
-                      <span>{dog?.pedigree[0].titles?.join(" ")}</span>
-                      <p>{dog.pedigree[0]?.name}</p>
+                <Reveal>
+                  <h2>Stamtavla</h2>
+                </Reveal>
+                <Reveal>
+                  <div className="pedigree-grid">
+                    <div className="column">
+                      <div className="row">
+                        <span>{dog?.pedigree[0].titles?.join(" ")}</span>
+                        <p>{dog.pedigree[0]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[1]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[1]?.name}</p>
+                      </div>
                     </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[1]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[1]?.name}</p>
+                    <div className="column">
+                      <div className="row">
+                        <span>{dog?.pedigree[2]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[2]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[3]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[3]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[4]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[4]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[5]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[5]?.name}</p>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="row">
+                        <span>{dog?.pedigree[6]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[6]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[7]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[7]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[8]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[8]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[9]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[9]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[10]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[10]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[11]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[11]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[12]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[12]?.name}</p>
+                      </div>
+                      <div className="row">
+                        <span>{dog?.pedigree[13]?.titles?.join(" ")}</span>
+                        <p>{dog.pedigree[13]?.name}</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="column">
-                    <div className="row">
-                      <span>{dog?.pedigree[2]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[2]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[3]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[3]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[4]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[4]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[5]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[5]?.name}</p>
-                    </div>
-                  </div>
-                  <div className="column">
-                    <div className="row">
-                      <span>{dog?.pedigree[6]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[6]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[7]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[7]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[8]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[8]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[9]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[9]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[10]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[10]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[11]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[11]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[12]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[12]?.name}</p>
-                    </div>
-                    <div className="row">
-                      <span>{dog?.pedigree[13]?.titles?.join(" ")}</span>
-                      <p>{dog.pedigree[13]?.name}</p>
-                    </div>
-                  </div>
-                </div>
+                </Reveal>
               </div>
             </div>
           )}

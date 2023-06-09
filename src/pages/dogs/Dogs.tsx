@@ -43,21 +43,50 @@ const Dogs = () => {
 
         <div className="all-dogs-wrapper">
           <div className="all-dogs-container">
-            {dogs?.map((e) => (
-              <Reveal>
-                <div className="all-dogs-dog">
-                  <h3>{e.name}</h3>
-                  <Link to={`/dogs/${e.name}`}>
-                    <div className="all-dogs-image-container">
-                      <img
-                        src={`${assetUrl}${e.image[0]}`}
-                        onClick={() => setSelectedDogId(e._id)}
-                      />
-                    </div>
-                  </Link>
-                </div>
-              </Reveal>
-            ))}
+            {dogs
+              ?.filter(
+                (e) =>
+                  e.breed === "Normalstor Tax" &&
+                  e.gender === "Tik" &&
+                  e.angelDog !== "true"
+              )
+              .map((e) => (
+                <Reveal>
+                  <div className="all-dogs-dog">
+                    <h3>{e.name}</h3>
+                    <Link to={`/dogs/${e.name}`}>
+                      <div className="all-dogs-image-container">
+                        <img
+                          src={`${assetUrl}${e.image[0]}`}
+                          onClick={() => setSelectedDogId(e._id)}
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                </Reveal>
+              ))}
+            {dogs
+              ?.filter(
+                (e) =>
+                  e.breed === "Normalstor Tax" &&
+                  e.gender === "Hane" &&
+                  e.angelDog !== "true"
+              )
+              .map((e) => (
+                <Reveal>
+                  <div className="all-dogs-dog">
+                    <h3>{e.name}</h3>
+                    <Link to={`/dogs/${e.name}`}>
+                      <div className="all-dogs-image-container">
+                        <img
+                          src={`${assetUrl}${e.image[0]}`}
+                          onClick={() => setSelectedDogId(e._id)}
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                </Reveal>
+              ))}
           </div>
         </div>
       </div>
