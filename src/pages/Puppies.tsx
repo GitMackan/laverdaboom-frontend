@@ -276,107 +276,131 @@ const Puppies = () => {
                 <p className="date">2020-04-12</p>
               </Reveal>
               <ul>
-                <li>
-                  <div className="previous-puppie">
-                    <FaDog size={18} />
-                    <div>
-                      <p>Laverdabooms Mio Min Mio</p>
-                      <p>SE36328/2020</p>
+                <Reveal>
+                  <li>
+                    <div className="previous-puppie">
+                      <FaDog size={18} />
+                      <div>
+                        <p>Laverdabooms Mio Min Mio</p>
+                        <p>SE36328/2020</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </Reveal>
               </ul>
               <ul>
-                <li>
-                  <div className="previous-puppie">
-                    <FaDog size={18} />
-                    <div>
-                      {" "}
-                      <p>Laverdabooms Skrållan</p>
-                      <p>SE36329/2020</p>
+                <Reveal>
+                  <li>
+                    <div className="previous-puppie">
+                      <FaDog size={18} />
+                      <div>
+                        {" "}
+                        <p>Laverdabooms Skrållan</p>
+                        <p>SE36329/2020</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </Reveal>
               </ul>
               <ul>
-                <li>
-                  <div className="previous-puppie">
-                    <FaDog size={18} />
-                    <div>
-                      <p>Laverdabooms Madicken</p>
-                      <p>SE36330/2020</p>
+                <Reveal>
+                  <li>
+                    <div className="previous-puppie">
+                      <FaDog size={18} />
+                      <div>
+                        <p>Laverdabooms Madicken</p>
+                        <p>SE36330/2020</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </Reveal>
               </ul>
               <ul>
-                <li>
-                  <div className="previous-puppie">
-                    <FaDog size={18} />
-                    <div>
-                      <p>Laverdabooms Kajsa Kavat</p>
-                      <p>SE36331/2020</p>
+                <Reveal>
+                  <li>
+                    <div className="previous-puppie">
+                      <FaDog size={18} />
+                      <div>
+                        <p>Laverdabooms Kajsa Kavat</p>
+                        <p>SE36331/2020</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </Reveal>
               </ul>
             </div>
             <div className="previous-right">
-              <img src={`${assetUrl}valpkull2.jpg`} />
+              <Reveal>
+                <img src={`${assetUrl}valpkull2.jpg`} />
+              </Reveal>
             </div>
           </div>
           <div className="family">
             <div className="previous-left">
-              <h3>Laverdabooms My Little Pinkie Pie x Ögus Nappe</h3>
-              <p className="date">2021-01-23</p>
+              <Reveal>
+                <h3>Laverdabooms My Little Pinkie Pie x Ögus Nappe</h3>
+              </Reveal>
+              <Reveal>
+                <p className="date">2021-01-23</p>
+              </Reveal>
               <ul>
-                <li>
-                  <div className="previous-puppie">
-                    <FaDog size={18} />
-                    <div>
-                      <p>Laverdabooms Dobby</p>
-                      <p>SE17821/2021</p>
+                <Reveal>
+                  <li>
+                    <div className="previous-puppie">
+                      <FaDog size={18} />
+                      <div>
+                        <p>Laverdabooms Dobby</p>
+                        <p>SE17821/2021</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </Reveal>
               </ul>
               <ul>
-                <li>
-                  <div className="previous-puppie">
-                    <FaDog size={18} />
-                    <div>
-                      {" "}
-                      <p>Laverdabooms Lily Potter</p>
-                      <p>SE17822/2021</p>
+                <Reveal>
+                  <li>
+                    <div className="previous-puppie">
+                      <FaDog size={18} />
+                      <div>
+                        {" "}
+                        <p>Laverdabooms Lily Potter</p>
+                        <p>SE17822/2021</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </Reveal>
               </ul>
               <ul>
-                <li>
-                  <div className="previous-puppie">
-                    <FaDog size={18} />
-                    <div>
-                      <p>Laverdabooms Luna Lovegood</p>
-                      <p>SE17819/2021</p>
+                <Reveal>
+                  <li>
+                    <div className="previous-puppie">
+                      <FaDog size={18} />
+                      <div>
+                        <p>Laverdabooms Luna Lovegood</p>
+                        <p>SE17819/2021</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </Reveal>
               </ul>
               <ul>
-                <li>
-                  <div className="previous-puppie">
-                    <FaDog size={18} />
-                    <div>
-                      <p>Laverdabooms Ginny Weasley</p>
-                      <p>SE17820/2021</p>
+                <Reveal>
+                  <li>
+                    <div className="previous-puppie">
+                      <FaDog size={18} />
+                      <div>
+                        <p>Laverdabooms Ginny Weasley</p>
+                        <p>SE17820/2021</p>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </Reveal>
               </ul>
             </div>
             <div className="previous-right">
-              <img src={`${assetUrl}valpkull3.jpg`} />
+              <Reveal>
+                <img src={`${assetUrl}valpkull3.jpg`} />
+              </Reveal>
             </div>
           </div>
         </div>
