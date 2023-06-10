@@ -54,6 +54,7 @@
   border-bottom: 0.5px solid $color-detail;
   padding-bottom: 1.5rem;
   width: fit-content;
+  margin: 0 auto;
 }
 
 .about-card-heading {
@@ -151,7 +152,6 @@
 
 .news-left p,
 .presentation-right p {
-  max-width: 500px;
   letter-spacing: 0.03em;
   line-height: 2rem;
   font-size: 1rem;
@@ -159,7 +159,7 @@
 }
 
 .news-left p {
-  padding: 3rem 3rem 3rem 0;
+  padding: 3rem;
 }
 
 .news-right img {
@@ -336,10 +336,6 @@
   width: 200px;
   height: 200px;
 }
-
-// .partner img {
-//   max-width: 100%;
-// }
 
 @media (max-width: 1100px) {
   .puppie-news {

@@ -24,8 +24,8 @@ const Footer = () => {
             <p>724 66 Västerås</p>
           </Reveal>
           <Reveal align="center">
-            <a href="mailto:sandrabrannstrom@hotmail.se">
-              sandrabrannstrom@hotmail.com
+            <a href="mailto:sandra.brannstrom@hotmail.se">
+              sandra.brannstrom@hotmail.com
             </a>
           </Reveal>
           <Reveal>
@@ -72,7 +72,7 @@ const Footer = () => {
             <p>724 84 Västerås</p>
           </Reveal>
           <Reveal align="center">
-            <a href="mailto:sandrabrannstrom@hotmail.se">
+            <a href="mailto:rosajohansson@hotmail.se">
               rosajohansson@hotmail.se
             </a>
           </Reveal>
