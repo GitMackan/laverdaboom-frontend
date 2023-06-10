@@ -70,6 +70,7 @@
 .facebook svg,
 .instagram svg {
   font-size: 3rem;
+  cursor: pointer;
 }
 
 .footer-img-container {
@@ -147,6 +148,24 @@
     transform: translateY(-50%);
     border: 1px solid $color-white;
     background-size: contain;
+  }
+}
+
+.partners {
+  color: red;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  font-size: 3rem;
+
+  .partners-container {
+    .partner {
+      background: blue;
+
+      img {
+        max-width: 100%;
+      }
+    }
   }
 }
 

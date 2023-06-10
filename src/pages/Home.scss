@@ -21,8 +21,9 @@
   position: relative;
   justify-content: space-evenly;
   align-items: center;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  max-width: 1600px;
 }
 
 .card-heading-container {
@@ -187,13 +188,13 @@
 .upcoming-puppies-wrapper {
   .upcoming-puppies {
     padding: 6rem 0;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
     margin: 0 auto;
     gap: 2rem;
     align-items: center;
     justify-content: center;
     max-width: 1600px;
+    width: 90%;
     h2 {
       font-family: $font-cursive;
       font-size: 4rem;
@@ -218,6 +219,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex: 1;
+
       a {
         margin-top: 2rem;
         font-weight: 100;
@@ -260,6 +263,7 @@
       margin-top: 2rem;
       margin-left: 3rem;
       width: 100%;
+      flex: 1;
       img {
         min-width: 300px;
         width: 100%;
@@ -326,16 +330,16 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 5rem 0;
-  z-index: -20;
 }
 
 .partner {
-  max-width: 200px;
+  width: 200px;
+  height: 200px;
 }
 
-.partner img {
-  max-width: 100%;
-}
+// .partner img {
+//   max-width: 100%;
+// }
 
 @media (max-width: 1100px) {
   .puppie-news {
@@ -400,6 +404,7 @@
       gap: 0rem;
       align-items: start;
       justify-content: start;
+
       .left {
         padding: 1rem;
         h2 {
@@ -409,11 +414,14 @@
       .right {
         margin-top: 2rem;
         margin-left: 0rem;
-        img {
-          min-width: 200px;
-          width: 100%;
-          max-width: 100%;
-          margin: 0 auto;
+
+        div {
+          img {
+            min-width: 200px;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+          }
         }
       }
     }

@@ -31,11 +31,27 @@ const Footer = () => {
           <Reveal>
             <div className="social">
               <div className="facebook">
-                <FaFacebook color="white" />
+                <FaFacebook
+                  color="white"
+                  onClick={() => {
+                    window.open(
+                      "https://www.facebook.com/profile.php?id=100008493274506",
+                      "_blank"
+                    );
+                  }}
+                />
               </div>
 
               <div className="instagram">
-                <FaInstagram color="white" />
+                <FaInstagram
+                  color="white"
+                  onClick={() => {
+                    window.open(
+                      "https://www.instagram.com/sandra_kennellaverdaboom/",
+                      "_blank"
+                    );
+                  }}
+                />
               </div>
             </div>
           </Reveal>
@@ -47,7 +63,7 @@ const Footer = () => {
             </div>
           </Reveal>
           <Reveal align="center">
-            <p className="contact-name">Rosa Johansson</p>
+            <p className="contact-name">Rosa Johanssons</p>
           </Reveal>
           <Reveal align="center">
             <p>Tunnbrödsvägen 3</p>
@@ -63,16 +79,51 @@ const Footer = () => {
           <Reveal>
             <div className="social">
               <div className="facebook">
-                <FaFacebook color="white" />
+                <FaFacebook
+                  color="white"
+                  onClick={() => {
+                    window.open(
+                      "https://www.facebook.com/rosa.johansson.5",
+                      "_blank"
+                    );
+                  }}
+                />
               </div>
 
               <div className="instagram">
-                <FaInstagram color="white" />
+                <FaInstagram
+                  color="white"
+                  onClick={() => {
+                    window.open(
+                      "https://www.instagram.com/rosaajohansson/",
+                      "_blank"
+                    );
+                  }}
+                />
               </div>
             </div>
           </Reveal>
         </div>
-        {/* <div className="card">
+      </div>
+      {/* <div className="partners">
+        Våra samarbetspartners
+        <div className="partners-container">
+          <div className="partner">
+            <img src={`${assetUrl}buddy-logo.png`} />
+          </div>
+          <div className="partner">
+            <img src={`${assetUrl}k9-comp-logo.png`} alt="" />
+          </div>
+        </div>
+      </div> */}
+    </div>
+  );
+};
+
+export default Footer;
+
+{
+  /* <div className="card">
           <div className="box">
             <Reveal align="center">
               <p className="contact-name">Sandra Brännström</p>
@@ -145,8 +196,10 @@ const Footer = () => {
               backgroundImage: ` url("https://laverdaboom.s3.eu-north-1.amazonaws.com/uploads/rosa.jpeg")`,
             }}
           ></div>
-        </div> */}
-        {/* <div className="contact-info">
+        </div> */
+}
+{
+  /* <div className="contact-info">
           <Reveal>
             <div className="footer-img-container">
               <img src={`${assetUrl}rosa.jpeg`} />
@@ -177,10 +230,5 @@ const Footer = () => {
               </div>
             </div>
           </Reveal>
-        </div> */}
-      </div>
-    </div>
-  );
-};
-
-export default Footer;
+        </div> */
+}
