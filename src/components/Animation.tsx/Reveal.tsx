@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-const Reveal = ({ children }: AnimationProps) => {
+const Reveal = ({
+  children,
+  align = "left",
+  width = "100%",
+}: AnimationProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -13,7 +17,7 @@ const Reveal = ({ children }: AnimationProps) => {
     }
   }, [isInView]);
   return (
-    <div ref={ref}>
+    <div ref={ref} style={{ width: width, textAlign: align }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -33,5 +37,6 @@ export default Reveal;
 
 interface AnimationProps {
   children: JSX.Element;
+  align?: "left" | "center";
   width?: "fit-content" | "100%";
 }

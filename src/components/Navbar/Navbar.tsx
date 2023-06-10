@@ -100,10 +100,10 @@ const Navbar = () => {
           <CustomLink to="/dogs">Våra hundar</CustomLink>
         </div>
         <div className="nav-item">
-          <CustomLink to="/contact">Kontakt</CustomLink>
+          <CustomLink to="/puppies">Valpar</CustomLink>
         </div>
         <div className="nav-item">
-          <CustomLink to="/puppies">Valpar</CustomLink>
+          <CustomLink to="/contact">Kontakt</CustomLink>
         </div>
       </ul>
       <div className="navbar-smallscreen">

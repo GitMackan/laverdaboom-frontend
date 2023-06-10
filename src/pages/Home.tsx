@@ -86,7 +86,7 @@ const Home = () => {
                 </p>
               </Reveal>
               <div className="dog-paragraph">
-                <Reveal>
+                <Reveal width="fit-content">
                   <BsGenderMale size={40} className={"gender-icon"} />
                 </Reveal>
                 <Reveal>
@@ -98,7 +98,7 @@ const Home = () => {
                 </Reveal>
               </div>
               <div className="dog-paragraph">
-                <Reveal>
+                <Reveal width="fit-content">
                   <BsGenderFemale size={40} className={"gender-icon"} />
                 </Reveal>
                 <Reveal>
@@ -115,7 +115,7 @@ const Home = () => {
                   & tack Kim Thuner för förtroendet med Skrållan.
                 </p>
               </Reveal>
-              <Reveal>
+              <Reveal align="center">
                 <Link to={"/puppies"}>Läs mer om våra valpar här</Link>
               </Reveal>
             </div>

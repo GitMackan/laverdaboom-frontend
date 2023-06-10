@@ -127,6 +127,7 @@
   line-height: 1.8rem;
   width: 70%;
   text-align: center;
+  margin: 0 auto;
 }
 
 .titles {
@@ -208,6 +209,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  height: 50px;
   font-size: 1.2rem;
   // background: rgb(250, 237, 237);
   border-bottom: 2px solid rgb(250, 237, 237);
@@ -256,10 +258,13 @@
 
   .titles {
     width: 100%;
-    .title {
-      width: 90%;
-      margin: 0 auto;
-      font-weight: 100;
+    .titles-container {
+      flex-direction: column;
+      .title {
+        margin: 0 auto;
+        width: 90%;
+        font-weight: 100;
+      }
     }
   }
 

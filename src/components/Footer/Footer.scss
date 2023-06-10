@@ -2,13 +2,23 @@
 
 .footer {
   min-height: 60vh;
-  background: $color-dark;
-  // clip-path: ellipse(102% 100% at 24% 100%);
+  background: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(204, 210, 210, 1) 0%,
+    rgba(196, 203, 203, 1) 0%,
+    rgba(176, 186, 186, 1) 0%,
+    rgba(151, 164, 165, 1) 0%,
+    rgba(109, 127, 128, 1) 0%,
+    rgba(50, 75, 76, 1) 100%
+  );
+  // background: $color-accent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 10vh 0;
-  color: $color-grey;
 }
 
 .footer h3 {
@@ -20,7 +30,7 @@
 }
 
 .footer-content {
-  width: 80%;
+  width: 100%;
   display: flex;
   margin: 0 auto;
   justify-content: space-around;
@@ -37,15 +47,12 @@
   gap: 0.3rem;
   text-align: center;
   font-size: 1.1rem;
-}
-
-.footer a {
-  color: $color-grey;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
+  p {
+    color: $color-grey;
+  }
+  a {
+    color: darken($color-grey, 15);
+  }
 }
 
 .contact-name {
@@ -74,6 +81,73 @@
   max-width: 100%;
   border-radius: 50%;
   border: 1px solid $color-secondary;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .box {
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border-radius: 15px;
+  }
+  .box:nth-child(1) {
+    color: white;
+    p {
+      font-size: 3.5rem;
+      padding-left: 5rem;
+      background: -webkit-linear-gradient(#fff, lighten($color-accent, 50));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .box:nth-child(2) {
+    background: -webkit-linear-gradient(
+      180deg,
+      #fff,
+      lighten($color-detail, 50)
+    );
+    width: 100%;
+    display: flex;
+    font-size: 1.2rem;
+    font-family: $font-secondary;
+    flex-direction: column;
+    color: $color-accent;
+    gap: 0.5rem;
+    padding-top: 0rem;
+    border: 1px solid $color-detail;
+    opacity: 0.9;
+    padding: 2rem 0 1rem 0;
+    a {
+      color: $color-accent;
+    }
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+
+      svg {
+        font-size: 3rem;
+      }
+    }
+  }
+  .circle {
+    position: absolute;
+    top: 30%;
+    left: -125px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    border: 1px solid $color-white;
+    background-size: contain;
+  }
 }
 
 @media (max-width: 900px) {

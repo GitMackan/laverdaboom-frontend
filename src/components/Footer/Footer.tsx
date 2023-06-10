@@ -14,16 +14,16 @@ const Footer = () => {
               <img src={`${assetUrl}sandra.jpeg`} />
             </div>
           </Reveal>
-          <Reveal>
+          <Reveal align="center">
             <p className="contact-name">Sandra Brännström</p>
           </Reveal>
-          <Reveal>
+          <Reveal align="center">
             <p>Sigfrid Edströms Gata 25B</p>
           </Reveal>
-          <Reveal>
+          <Reveal align="center">
             <p>724 66 Västerås</p>
           </Reveal>
-          <Reveal>
+          <Reveal align="center">
             <a href="mailto:sandrabrannstrom@hotmail.se">
               sandrabrannstrom@hotmail.com
             </a>
@@ -46,16 +46,16 @@ const Footer = () => {
               <img src={`${assetUrl}rosa.jpeg`} />
             </div>
           </Reveal>
-          <Reveal>
+          <Reveal align="center">
             <p className="contact-name">Rosa Johansson</p>
           </Reveal>
-          <Reveal>
+          <Reveal align="center">
             <p>Tunnbrödsvägen 3</p>
           </Reveal>
-          <Reveal>
+          <Reveal align="center">
             <p>724 84 Västerås</p>
           </Reveal>
-          <Reveal>
+          <Reveal align="center">
             <a href="mailto:sandrabrannstrom@hotmail.se">
               rosajohansson@hotmail.se
             </a>
@@ -72,6 +72,112 @@ const Footer = () => {
             </div>
           </Reveal>
         </div>
+        {/* <div className="card">
+          <div className="box">
+            <Reveal align="center">
+              <p className="contact-name">Sandra Brännström</p>
+            </Reveal>
+          </div>
+          <div className="box">
+            <Reveal align="center">
+              <p>Sigfrid Edströms Gata 25B</p>
+            </Reveal>
+            <Reveal align="center">
+              <p>724 84 Västerås</p>
+            </Reveal>
+            <Reveal align="center">
+              <a href="mailto:sandrabrannstrom@hotmail.se">
+                rosajohansson@hotmail.se
+              </a>
+            </Reveal>
+            <Reveal>
+              <div className="socials">
+                <div>
+                  <FaFacebook color="#4267B2" />
+                </div>
+
+                <div>
+                  <FaInstagram color="purple" />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+          <div
+            className="circle"
+            style={{
+              backgroundImage: ` url("https://laverdaboom.s3.eu-north-1.amazonaws.com/uploads/sandra.jpeg")`,
+            }}
+          ></div>
+        </div>
+        <div className="card">
+          <div className="box">
+            <Reveal align="center">
+              <p className="contact-name">Rosa Johansson</p>
+            </Reveal>
+          </div>
+          <div className="box">
+            <Reveal align="center">
+              <p>Tunnbrödsvägen 3</p>
+            </Reveal>
+            <Reveal align="center">
+              <p>724 84 Västerås</p>
+            </Reveal>
+            <Reveal align="center">
+              <a href="mailto:sandrabrannstrom@hotmail.se">
+                rosajohansson@hotmail.se
+              </a>
+            </Reveal>
+            <Reveal>
+              <div className="socials">
+                <div>
+                  <FaFacebook color="	#4267B2" />
+                </div>
+
+                <div>
+                  <FaInstagram color="purple" />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+          <div
+            className="circle"
+            style={{
+              backgroundImage: ` url("https://laverdaboom.s3.eu-north-1.amazonaws.com/uploads/rosa.jpeg")`,
+            }}
+          ></div>
+        </div> */}
+        {/* <div className="contact-info">
+          <Reveal>
+            <div className="footer-img-container">
+              <img src={`${assetUrl}rosa.jpeg`} />
+            </div>
+          </Reveal>
+          <Reveal align="center">
+            <p className="contact-name">Rosa Johansson</p>
+          </Reveal>
+          <Reveal align="center">
+            <p>Tunnbrödsvägen 3</p>
+          </Reveal>
+          <Reveal align="center">
+            <p>724 84 Västerås</p>
+          </Reveal>
+          <Reveal align="center">
+            <a href="mailto:sandrabrannstrom@hotmail.se">
+              rosajohansson@hotmail.se
+            </a>
+          </Reveal>
+          <Reveal>
+            <div className="social">
+              <div className="facebook">
+                <FaFacebook color="white" />
+              </div>
+
+              <div className="instagram">
+                <FaInstagram color="white" />
+              </div>
+            </div>
+          </Reveal>
+        </div> */}
       </div>
     </div>
   );

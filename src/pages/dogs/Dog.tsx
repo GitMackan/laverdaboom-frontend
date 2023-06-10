@@ -47,18 +47,16 @@ const Dog = () => {
 
   const getDog = async () => {
     await axios
-      .get(`https://laverdaboom-api.herokuapp.com/dogs/${params.id}`)
+      .get(`http://localhost:8080/dogs/${params.id}`)
       .then((response) => {
         setDog(response.data);
       });
   };
 
   const getDogs = async () => {
-    await axios
-      .get("https://laverdaboom-api.herokuapp.com/dogs")
-      .then((response) => {
-        setDogs(response.data);
-      });
+    await axios.get("http://localhost:8080/dogs").then((response) => {
+      setDogs(response.data);
+    });
   };
 
   const images: any = dog?.image.map((e) => ({
@@ -208,11 +206,11 @@ const Dog = () => {
             </div>
 
             {dog?.description && (
-              <Reveal>
-                <div className="description">
+              <div className="description">
+                <Reveal>
                   <p className="description-text">{dog.description}</p>
-                </div>
-              </Reveal>
+                </Reveal>
+              </div>
             )}
             {dog?.titles && dog?.titles?.length > 0 && (
               <div className="titles">
@@ -221,7 +219,13 @@ const Dog = () => {
                 </Reveal>
                 <div className="titles-container">
                   {dog?.titles.map((e) => (
-                    <Reveal>
+                    <Reveal
+                      width={`${
+                        windowWidth && windowWidth > 1100
+                          ? "fit-content"
+                          : "100%"
+                      }`}
+                    >
                       <div className="title">
                         <FiAward color={"#324b4c"} size={24} />
                         <p>{e}</p>
