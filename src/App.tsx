@@ -25,12 +25,12 @@ const ScrollToTop = () => {
 };
 
 function App() {
-  // ga4.initialize("G-77X3C4HT36", {
-  //   gaOptions: {
-  //     storage: undefined,
-  //     storeGac: true,
-  //   },
-  // });
+  ga4.initialize("G-77X3C4HT36", {
+    gaOptions: {
+      storage: undefined,
+      storeGac: true,
+    },
+  });
 
   return (
     <CookiesProvider>
