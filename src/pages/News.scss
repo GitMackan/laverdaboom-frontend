@@ -1,0 +1,122 @@
+@import "../variables";
+
+.insta-feed-container {
+  padding-top: 15vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 235, 235, 1) 100%
+  );
+  h2 {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2rem;
+    font-family: $font-cursive;
+    font-size: 5rem;
+    border-bottom: 1px solid $color-detail;
+    width: fit-content;
+    padding-bottom: 0.5rem;
+  }
+
+  .intro-text {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 600px;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-family: $font-secondary;
+  }
+
+  .feed {
+    padding: 5rem;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-bottom: 0.5px solid $color-accent;
+    border-radius: 0;
+    color: $color-accent;
+    font-size: 1.3rem;
+    font-family: $font-secondary;
+
+    p {
+      margin-bottom: 2rem;
+      word-wrap: break-word;
+      line-height: 1.8rem;
+      letter-spacing: 0.03rem;
+      max-width: 80ch;
+      font-size: 1rem;
+    }
+    a {
+      color: $color-accent;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-family: $font-primary;
+      font-size: 1rem;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .date {
+      font-size: 1.2rem;
+      color: darken($color-accent, 20);
+      font-family: $font-secondary;
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      margin: 2rem 0;
+      border-bottom: 0.5px solid $color-accent;
+      padding-bottom: 0.5rem;
+      width: fit-content;
+      p {
+        margin: 0;
+      }
+    }
+    img {
+      max-width: 100%;
+      max-height: 50vh;
+      box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.4);
+      -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.4);
+    }
+    video {
+      max-width: 100%;
+      width: 100%;
+      margin-top: 1rem;
+      max-height: 50vh;
+      //   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.4);
+      //   -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.4);
+      //   -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .insta-feed-container {
+    .feed {
+      max-width: 100%;
+      width: 100%;
+      padding: 3rem 1rem;
+      border: none;
+      border-bottom: 0.5px solid $color-accent;
+      border-radius: 0;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 235, 235, 1) 100%
+      );
+      font-size: 16px;
+      .date {
+        font-size: 14px;
+      }
+    }
+  }
+}

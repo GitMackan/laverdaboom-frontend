@@ -13,6 +13,7 @@ import Puppies from "./pages/Puppies";
 import { useEffect } from "react";
 import ga4 from "react-ga4";
 import Dog from "./pages/dogs/Dog";
+import News from "./pages/News";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -36,7 +37,7 @@ function App() {
     <CookiesProvider>
       <ParallaxProvider>
         <Navbar />
-        <div className="container">
+        <div>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -46,6 +47,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/puppies" element={<Puppies />} />
+            <Route path="/news" element={<News />} />
           </Routes>
         </div>
         <Footer />

@@ -8,6 +8,7 @@ import { Link, useLocation } from "react-router-dom";
 import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
 import { useWindowSize } from "../utility/useWindowSize";
 import Reveal from "../components/Animation.tsx/Reveal";
+import axios from "axios";
 
 const Home = () => {
   const screenWidth = useWindowSize().width;
@@ -30,8 +31,8 @@ const Home = () => {
       <HeroSection />
       <div className="home-wrapper">
         <div className="news-container" id="news">
-          <div className="news" id="news" ref={newsRef}>
-            <div className="news-left">
+          <div className="container" id="news" ref={newsRef}>
+            <div className="column">
               <div className="card-heading-container">
                 <div className="dog-paw">
                   <Reveal>
@@ -56,7 +57,7 @@ const Home = () => {
                 </p>
               </Reveal>
             </div>
-            <div className="news-right">
+            <div className="column">
               <Reveal>
                 <img src={`${assetUrl}laverdaboom.jpeg`} alt="" />
               </Reveal>

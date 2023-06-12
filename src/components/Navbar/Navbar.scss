@@ -60,7 +60,8 @@
 
 .navbar-links a {
   color: $color-dark;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
 }

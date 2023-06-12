@@ -103,6 +103,9 @@ const Navbar = () => {
           <CustomLink to="/puppies">Valpar</CustomLink>
         </div>
         <div className="nav-item">
+          <CustomLink to="/news">Nyheter</CustomLink>
+        </div>
+        <div className="nav-item">
           <CustomLink to="/contact">Kontakt</CustomLink>
         </div>
       </ul>
@@ -132,7 +135,7 @@ const Navbar = () => {
         >
           <ul className="navbar-smallscreen_links">
             <li>
-              <Reveal>
+              <Reveal align="center">
                 <Link to="/" onClick={() => setMenuOpen(false)}>
                   Hem
                 </Link>
@@ -140,21 +143,28 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Reveal>
+              <Reveal align="center">
                 <Link to="/dogs" onClick={() => setMenuOpen(false)}>
                   Våra hundar
                 </Link>
               </Reveal>
             </li>
             <li>
-              <Reveal>
+              <Reveal align="center">
                 <Link to="/puppies" onClick={() => setMenuOpen(false)}>
                   Valpar
                 </Link>
               </Reveal>
             </li>
             <li>
-              <Reveal>
+              <Reveal align="center">
+                <Link to="/news" onClick={() => setMenuOpen(false)}>
+                  Nyheter
+                </Link>
+              </Reveal>
+            </li>
+            <li>
+              <Reveal align="center">
                 <Link to="/contact" onClick={() => setMenuOpen(false)}>
                   Kontakt
                 </Link>
