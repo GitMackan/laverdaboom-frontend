@@ -17,6 +17,22 @@ const News = () => {
   const [feed, setFeed] = useState<InstagramData[]>([]);
   const videoRef = useRef<HTMLVideoElement>(null);
   const windowWidth = useWindowSize().width;
+  const [currentVideo, setCurrentVideo] = useState(null);
+
+  const setVideoRef = (ref: any, index: any) => {
+    if (ref) {
+      const observer = new IntersectionObserver((entries) => {
+        const isVisible = entries[0].isIntersecting;
+        if (!isVisible && currentVideo === index) {
+          ref.pause();
+        }
+      });
+      observer.observe(ref);
+
+      // Cleanup the observer when the video component unmounts
+      return () => observer.unobserve(ref);
+    }
+  };
 
   const access_token = process.env.REACT_APP_INSTAGRAM_ACCESS_TOKEN;
 
@@ -27,44 +43,14 @@ const News = () => {
           `https://graph.instagram.com/me/media?fields=id,timestamp,caption,media_url,thumbnail_url,permalink&access_token=${access_token}`
         )
         .then((response) => {
-          console.log(response);
           setFeed(response.data.data);
         });
     }
   }, []);
 
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5, // Adjust the threshold value as per your preference
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target === videoRef.current) {
-          if (entry.isIntersecting) {
-            // Video is visible on the screen
-            videoRef.current?.play();
-          } else {
-            // Video is not visible on the screen
-            videoRef.current?.pause();
-          }
-        }
-      });
-    }, options);
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    // Cleanup the observer when the component is unmounted
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
-  }, []);
+  const handleVideoPlay = (index: any) => {
+    setCurrentVideo(index);
+  };
 
   return (
     <div className="insta-feed-container">
@@ -73,7 +59,7 @@ const News = () => {
         Håll dig uppdaterad om nyheter i kenneln genom Sandras instagram!
       </p>
       {feed?.length > 0 &&
-        feed.map((e) => {
+        feed.map((e, index) => {
           const date = new Date(e.timestamp);
           const formattedDate = date.toLocaleDateString();
 
@@ -87,8 +73,15 @@ const News = () => {
               </div>
               <p>{e.caption}</p>
               {e.media_url.includes("mp4") ? (
-                <video controls ref={videoRef}>
-                  <source src={e.media_url} type="video/mp4" />
+                <video
+                  controls
+                  ref={(ref) => setVideoRef(ref, index)}
+                  onPlay={() => handleVideoPlay(index)}
+                  onPause={() => setCurrentVideo(null)}
+                  onEnded={() => setCurrentVideo(null)}
+                  preload="metadata"
+                >
+                  <source src={`${e.media_url}#t=0.001`} type="video/mp4" />
                 </video>
               ) : (
                 <img src={e.media_url} />
