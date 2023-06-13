@@ -31,8 +31,8 @@ const Home = () => {
       <HeroSection />
       <div className="home-wrapper">
         <div className="news-container" id="news">
-          <div className="container" id="news" ref={newsRef}>
-            <div className="column">
+          <div className="news" id="news" ref={newsRef}>
+            <div className="news-left">
               <div className="card-heading-container">
                 <div className="dog-paw">
                   <Reveal>
@@ -57,7 +57,7 @@ const Home = () => {
                 </p>
               </Reveal>
             </div>
-            <div className="column">
+            <div className="news-right">
               <Reveal>
                 <img src={`${assetUrl}laverdaboom.jpeg`} alt="" />
               </Reveal>

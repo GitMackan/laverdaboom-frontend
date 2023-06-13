@@ -11,26 +11,26 @@ body {
   scroll-behavior: smooth;
 }
 
-.container {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 90%;
-  max-width: 1600px;
-  margin: 0 auto;
-  .column {
-    flex: 1;
-    padding: 12rem 2rem 5rem 2rem;
-    img {
-      max-width: 100%;
-    }
-    p {
-      letter-spacing: 0.03em;
-      line-height: 2rem;
-      font-size: 1rem;
-      font-weight: 100;
-      padding: 3rem;
-    }
-  }
-}
+// .container {
+//   display: flex;
+//   position: relative;
+//   align-items: center;
+//   justify-content: space-evenly;
+//   width: 90%;
+//   max-width: 1600px;
+//   margin: 0 auto;
+//   .column {
+//     flex: 1;
+//     padding: 12rem 2rem 5rem 2rem;
+//     img {
+//       max-width: 100%;
+//     }
+//     p {
+//       letter-spacing: 0.03em;
+//       line-height: 2rem;
+//       font-size: 1rem;
+//       font-weight: 100;
+//       padding: 3rem;
+//     }
+//   }
+// }

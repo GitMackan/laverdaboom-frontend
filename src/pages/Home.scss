@@ -441,23 +441,25 @@
       max-width: 90%;
     }
   }
-  .news-container {
-    padding: 0rem;
-    .news {
-      margin-top: 4rem;
-      flex-direction: column;
-      padding: 3rem 0;
-      width: 100%;
-      gap: 0rem;
-      .news-left {
-        .card-heading-container {
-          .dog-paw {
-            left: 20px;
+  .home-wrapper {
+    .news-container {
+      padding: 0rem;
+      .news {
+        margin-top: 4rem;
+        flex-direction: column;
+        padding: 3rem 0;
+        width: 100%;
+        gap: 0rem;
+        .news-left {
+          .card-heading-container {
+            .dog-paw {
+              left: 20px;
+            }
           }
-        }
-        p {
-          width: 100%;
-          padding: 1.5rem;
+          p {
+            width: 100%;
+            padding: 1.5rem;
+          }
         }
       }
     }
@@ -467,10 +469,17 @@
           .dog-paragraph {
             border-bottom: 0.5px solid $color-accent;
             padding: 1rem 0;
-            p {
-              b {
-                font-size: 3rem;
-                font-weight: 400;
+            svg {
+              padding: 0;
+              margin: 0 1rem;
+              width: fit-content;
+            }
+            div {
+              p {
+                b {
+                  font-size: 1.5rem;
+                  font-weight: 400;
+                }
               }
             }
           }
