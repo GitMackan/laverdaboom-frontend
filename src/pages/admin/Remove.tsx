@@ -9,20 +9,18 @@ const Remove = () => {
   const [selectedDogId, setSelectedDogId] = useState<string>();
   const [cookies, setCookie] = useCookies(["LAVERDABOOM-AUTH"]);
   const cookie = cookies["LAVERDABOOM-AUTH"];
+  const URL = process.env.REACT_APP_SERVER_URL;
 
   const handleRemove = async () => {
-    await axios.delete(
-      `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
-      {
-        data: {
-          sessionToken: cookie,
-        },
-      }
-    );
+    await axios.delete(`${URL}/dogs/${selectedDogId}`, {
+      data: {
+        sessionToken: cookie,
+      },
+    });
   };
 
   useEffect(() => {
-    axios.get("https://laverdaboom-api.herokuapp.com/dogs").then((response) => {
+    axios.get(`${URL}/dogs`).then((response) => {
       setDogs(response.data);
     });
   }, []);

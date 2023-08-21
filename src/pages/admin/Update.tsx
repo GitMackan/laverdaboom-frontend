@@ -39,12 +39,11 @@ const Update = () => {
   const [chosenParent, setChosenParent] = useState<Parent>();
   const [openModal, setOpenModal] = useState(false);
   const [index, setIndex] = useState<number>();
+  const URL = process.env.REACT_APP_SERVER_URL;
 
   const handleImageChange = (event: any) => {
     setImage(event.target.files[0]);
   };
-
-  console.log(pedigree);
 
   axios.defaults.withCredentials = true;
 
@@ -57,7 +56,7 @@ const Update = () => {
     e.preventDefault();
     try {
       await axios.patch(
-        `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
+        `${URL}/dogs/${selectedDogId}`,
         {
           name: name,
           breed: breed && breed,
@@ -98,7 +97,7 @@ const Update = () => {
     const newImages = selectedDog?.image.filter((e) => e !== selectedImg);
     try {
       await axios.patch(
-        `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
+        `${URL}/dogs/${selectedDogId}`,
         {
           name: name && name,
           breed: breed && breed,
@@ -136,7 +135,7 @@ const Update = () => {
   };
 
   useEffect(() => {
-    axios.get("https://laverdaboom-api.herokuapp.com/dogs").then((response) => {
+    axios.get(`${URL}/dogs`).then((response) => {
       setDogs(response.data);
     });
   }, [submitted]);

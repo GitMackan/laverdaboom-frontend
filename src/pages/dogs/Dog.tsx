@@ -1,6 +1,5 @@
 import { assetUrl } from "../../assets/constants";
 import ImageGallery from "react-image-gallery";
-import { FaCircle } from "react-icons/fa";
 import { FiAward } from "react-icons/fi";
 import "./Dog.scss";
 import Reveal from "../../components/Animation.tsx/Reveal";
@@ -35,10 +34,9 @@ export type DogType = {
 const Dog = () => {
   const [dog, setDog] = useState<DogType>();
   const [dogs, setDogs] = useState<DogType[]>();
-  const [selectedDogId, setSelectedDogId] = useState<DogType["_id"]>();
   const params = useParams();
   const windowWidth = useWindowSize().width;
-  console.log(params);
+  const URL = process.env.REACT_APP_SERVER_URL;
 
   useEffect(() => {
     getDogs();
@@ -46,19 +44,15 @@ const Dog = () => {
   }, [params]);
 
   const getDog = async () => {
-    await axios
-      .get(`https://laverdaboom-api.herokuapp.com/dogs/${params.id}`)
-      .then((response) => {
-        setDog(response.data);
-      });
+    await axios.get(`${URL}/dogs/${params.id}`).then((response) => {
+      setDog(response.data);
+    });
   };
 
   const getDogs = async () => {
-    await axios
-      .get("https://laverdaboom-api.herokuapp.com/dogs")
-      .then((response) => {
-        setDogs(response.data);
-      });
+    await axios.get(`${URL}/dogs`).then((response) => {
+      setDogs(response.data);
+    });
   };
 
   const images: any = dog?.image.map((e) => ({

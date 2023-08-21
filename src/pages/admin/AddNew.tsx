@@ -18,6 +18,7 @@ const AddNew = () => {
   const [image, setImage] = useState<any>();
   const [displayImage, setDisplayImage] = useState<any>(null);
   const cookie = cookies["LAVERDABOOM-AUTH"];
+  const serverURL = process.env.REACT_APP_SERVER_URL;
 
   const handleImageChange = (event: any) => {
     setImage(event.target.files[0]);
@@ -29,7 +30,7 @@ const AddNew = () => {
     e.preventDefault();
 
     await axios.post(
-      `https://laverdaboom-api.herokuapp.com/dogs`,
+      `${serverURL}/dogs`,
       {
         name: name,
         breed: breed && breed,

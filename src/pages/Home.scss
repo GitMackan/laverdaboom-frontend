@@ -4,6 +4,27 @@
   margin-top: -10px;
 }
 
+.testContainer {
+  // -webkit-perspective: 1000px;
+  // perspective: 1000px;
+  // transform-style: preserve-3d;
+  width: 100%;
+
+  .testImg {
+    width: 50%;
+    margin: 5rem;
+
+    // transition: all 1s ease;
+    // transform: rotateX(20deg);
+    // -webkit-transform: rotateX(20deg);
+    // -webkit-transform-origin-y: 300px;
+  }
+  // .testImg:hover {
+  //   transform: rotateX(0deg);
+  //   -webkit-transform: rotateX(0deg);
+  // }
+}
+
 .news-container {
   display: flex;
   background: rgb(255, 255, 255);
@@ -185,7 +206,9 @@
   padding-bottom: 5rem;
 }
 
+.current-puppies-wrapper,
 .upcoming-puppies-wrapper {
+  .current-puppies,
   .upcoming-puppies {
     padding: 6rem 0;
     display: flex;
@@ -226,6 +249,12 @@
         font-weight: 100;
         color: $color-accent;
         cursor: pointer;
+      }
+      h3 {
+        font-family: $font-secondary;
+        font-weight: 200;
+        font-size: 1.5rem;
+        text-align: center;
       }
       a:hover {
         text-decoration: underline;

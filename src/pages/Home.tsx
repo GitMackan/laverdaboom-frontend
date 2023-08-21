@@ -3,17 +3,36 @@ import HeroSection from "../components/HeroSection/HeroSection";
 import { Parallax } from "react-scroll-parallax";
 import "./Home.scss";
 import { FiAward } from "react-icons/fi";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
 import { useWindowSize } from "../utility/useWindowSize";
 import Reveal from "../components/Animation.tsx/Reveal";
 import axios from "axios";
+import ImageFlipAnimation from "../components/Animation.tsx/ImageFlipAnimation";
+import { useInView } from "framer-motion";
 
 const Home = () => {
   const screenWidth = useWindowSize().width;
   const location = useLocation();
   const newsRef = useRef<HTMLDivElement>(null);
+  // const imageRef = useRef<HTMLDivElement>(null);
+  // const imageInView = useInView(imageRef);
+  // const [scroll, setScroll] = useState<any>();
+
+  // console.log(scroll);
+
+  // const handleScroll = () => {
+  //   const scrollPosition = window.scrollY; // => scroll position
+  //   setScroll(scrollPosition / 10);
+  // };
+  // useEffect(() => {
+  //   handleScroll();
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   useEffect(() => {
     if (newsRef.current && location.hash === "#news") {
@@ -78,12 +97,17 @@ const Home = () => {
 
             <div className="left">
               <Reveal>
-                <h2>Planerad valpkull</h2>
+                <h2>Aktuell valpkull</h2>
               </Reveal>
               <Reveal>
+                <h3>Glada nyheter från Laverdaboom!</h3>
+              </Reveal>
+
+              <Reveal>
                 <p>
-                  Planerad kull på Kennel Laverdaboom. Efter lyckade parningar
-                  håller vi nu tummarna för en kull på kenneln i Juli.
+                  2023-07-21 föddes 5 välmående valpar på kenneln. Två tikar och
+                  tre hanar. Ännu finns en otingad hane som letar efter ett
+                  framtida hem.
                 </p>
               </Reveal>
               <div className="dog-paragraph">
@@ -121,6 +145,20 @@ const Home = () => {
               </Reveal>
             </div>
           </div>
+        </div>
+        <div
+          className="testContainer"
+          // ref={imageRef}
+          // style={{ transform: `rotateX(-${scroll}deg)` }}
+        >
+          {/* <ImageFlipAnimation> */}
+          <img
+            className="testImg"
+            // style={{ transform: `rotateX(${})` }}
+            src={`${assetUrl}laverdaboom.jpeg`}
+            alt=""
+          />
+          {/* </ImageFlipAnimation> */}
         </div>
       </div>
     </>

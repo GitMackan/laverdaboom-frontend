@@ -155,12 +155,17 @@ const Puppies = () => {
           </div>
           <div className="left">
             <Reveal>
-              <h2>Planerad valpkull</h2>
+              <h2>Aktuell valpkull</h2>
             </Reveal>
             <Reveal>
+              <h3>Glada nyheter från Laverdaboom!</h3>
+            </Reveal>
+
+            <Reveal>
               <p>
-                Planerad kull på Kennel Laverdaboom. Efter lyckade parningar
-                håller vi nu tummarna för en kull på kenneln i Juli.
+                2023-07-21 föddes 5 välmående valpar på kenneln. Två tikar och
+                tre hanar. Ännu finns en otingad hane som letar efter ett
+                framtida hem.
               </p>
             </Reveal>
             <Reveal>
@@ -187,11 +192,95 @@ const Puppies = () => {
               <p>
                 Tack Mlin Sundqvist för att jag fått låna din underbara Sarek &
                 tack Kim Thuner för förtroendet med Skrållan.
+                <br /> <br />
+                Läs mer om vår nya valpkull nedan.
               </p>
             </Reveal>
           </div>
         </div>
       </div>
+      <div className="current-wrapper">
+        <div className="current">
+          <div className="previous-left">
+            <Reveal>
+              <h3>Yxtanejdens Sarek x Laverdabooms Skrållan</h3>
+            </Reveal>
+            <Reveal>
+              <p className="date">2023-07-21</p>
+            </Reveal>
+            <ul>
+              <Reveal>
+                <li>
+                  <div className="previous-puppie">
+                    <FaDog size={18} />
+                    <div>
+                      <p>Laverdabooms Rosie Cotton </p>
+                    </div>
+                  </div>
+                </li>
+              </Reveal>
+            </ul>
+            <ul>
+              <Reveal>
+                <li>
+                  <div className="previous-puppie">
+                    <FaDog size={18} />
+                    <div>
+                      <p>Laverdabooms Legolas </p>
+                    </div>
+                  </div>
+                </li>
+              </Reveal>
+            </ul>
+            <ul>
+              <Reveal>
+                <li>
+                  <div className="previous-puppie">
+                    <FaDog size={18} />
+                    <div>
+                      <p>Laverdabooms Bilbo Bagger </p>
+                    </div>
+                  </div>
+                </li>
+              </Reveal>
+            </ul>
+            <ul>
+              <Reveal>
+                <li>
+                  <div className="previous-puppie">
+                    <FaDog size={18} />
+                    <div>
+                      <p>Laverdabooms Galadriel </p>
+                    </div>
+                  </div>
+                </li>
+              </Reveal>
+              <Reveal>
+                <li>
+                  <div className="previous-puppie">
+                    <FaDog size={18} />
+                    <div>
+                      <p>Laverdabooms Gimli </p>
+                    </div>
+                  </div>
+                </li>
+              </Reveal>
+            </ul>
+          </div>
+          <div className="previous-right">
+            <Reveal>
+              <div className="current-image-container">
+                <img src={`${assetUrl}lotr1.jpeg`} />
+                <img src={`${assetUrl}lotr2.jpeg`} />
+                <img src={`${assetUrl}lotr3.jpeg`} />
+                <img src={`${assetUrl}lotr4.jpeg`} />
+                <img src={`${assetUrl}lotr5.jpeg`} />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+
       <div className="puppies-previous">
         <div className="puppies-previous-intro">
           <Reveal>

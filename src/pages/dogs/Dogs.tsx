@@ -13,17 +13,17 @@ const Dogs = () => {
   const [dogs, setDogs] = useState<DogType[] | undefined>();
   const [selectedDogId, setSelectedDogId] = useState<DogType["_id"]>();
   const windowWidth = useWindowSize().width;
+  const URL = process.env.REACT_APP_SERVER_URL;
 
+  console.log(URL);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const getDogs = async () => {
-    await axios
-      .get("https://laverdaboom-api.herokuapp.com/dogs")
-      .then((response) => {
-        setDogs(response.data);
-      });
+    await axios.get(`${URL}/dogs`).then((response) => {
+      setDogs(response.data);
+    });
   };
 
   useEffect(() => {

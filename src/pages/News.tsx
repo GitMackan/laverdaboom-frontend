@@ -46,6 +46,14 @@ const News = () => {
           setFeed(response.data.data);
         });
     }
+
+    axios
+      .get(
+        `https://graph.instagram.com/refresh_access_token
+    ?grant_type=ig_refresh_token
+    &access_token=${access_token}`
+      )
+      .then((resp) => console.log(resp));
   }, []);
 
   const handleVideoPlay = (index: any) => {
