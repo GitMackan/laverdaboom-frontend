@@ -9,14 +9,21 @@ import { assetUrl } from "../../assets/constants";
 import Reveal from "../../components/Animation.tsx/Reveal";
 import { Link } from "react-router-dom";
 
+type URL = string;
+
 const Dogs = () => {
   const [dogs, setDogs] = useState<DogType[] | undefined>();
   const [selectedDogId, setSelectedDogId] = useState<DogType["_id"]>();
   const windowWidth = useWindowSize().width;
   const URL = process.env.REACT_APP_SERVER_URL;
+  console.log(window.location.origin);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    getDogs();
   }, []);
 
   const getDogs = async () => {
@@ -27,7 +34,7 @@ const Dogs = () => {
     }
   };
 
-  const generateSelectedDogUrl = (name: string): string => {
+  const generateSelectedDogUrl = (name: string): URL => {
     const characterMap = {
       å: "a",
       ä: "a",
@@ -38,14 +45,12 @@ const Dogs = () => {
       .toLowerCase()
       .replace(/[åäö]/g, (match) => (characterMap as any)[match] || match);
 
-    const url = `${URL}/dogs/${encodeURIComponent(sanitizedName)}`;
+    const url = `${window.location.origin}/dogs/${encodeURIComponent(
+      sanitizedName
+    )}`;
 
     return url;
   };
-
-  useEffect(() => {
-    getDogs();
-  }, []);
 
   return (
     <div className="dogs-homepage">
