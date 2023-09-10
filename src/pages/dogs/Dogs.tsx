@@ -71,7 +71,7 @@ const Dogs = () => {
                   e.angelDog !== "true"
               )
               .map((e) => (
-                <Reveal>
+                <Reveal key={e._id}>
                   <div className="all-dogs-dog">
                     <h3>{e.name}</h3>
                     <Link to={generateSelectedDogUrl(e.nickName)}>
@@ -93,7 +93,7 @@ const Dogs = () => {
                   e.angelDog !== "true"
               )
               .map((e) => (
-                <Reveal>
+                <Reveal key={e._id}>
                   <div className="all-dogs-dog">
                     <h3>{e.name}</h3>
                     <Link to={generateSelectedDogUrl(e.nickName)}>
