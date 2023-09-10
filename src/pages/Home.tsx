@@ -146,20 +146,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div
-          className="testContainer"
-          // ref={imageRef}
-          // style={{ transform: `rotateX(-${scroll}deg)` }}
-        >
-          {/* <ImageFlipAnimation> */}
-          <img
-            className="testImg"
-            // style={{ transform: `rotateX(${})` }}
-            src={`${assetUrl}laverdaboom.jpeg`}
-            alt=""
-          />
-          {/* </ImageFlipAnimation> */}
-        </div>
       </div>
     </>
   );
