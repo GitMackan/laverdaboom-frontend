@@ -20,9 +20,11 @@ const Dogs = () => {
   }, []);
 
   const getDogs = async () => {
-    await axios.get(`${URL}/dogs`).then((response) => {
-      setDogs(response.data);
-    });
+    if (URL) {
+      await axios.get(`${URL}/dogs`).then((response) => {
+        setDogs(response.data);
+      });
+    }
   };
 
   const generateSelectedDogUrl = (name: string): string => {
