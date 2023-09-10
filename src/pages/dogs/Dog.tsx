@@ -21,6 +21,7 @@ export type DogType = {
   regNr?: string;
   color?: string;
   IVDD?: string;
+  nickName: string;
   BPH?: string;
   eye?: string;
   birthDate?: string;
@@ -44,19 +45,15 @@ const Dog = () => {
   }, [params]);
 
   const getDog = async () => {
-    await axios
-      .get(`https://laverdaboom-api.herokuapp.com/dogs${params.id}`)
-      .then((response) => {
-        setDog(response.data);
-      });
+    await axios.get(`${URL}/dogs/${params.name}`).then((response) => {
+      setDog(response.data);
+    });
   };
 
   const getDogs = async () => {
-    await axios
-      .get(`https://laverdaboom-api.herokuapp.com/dogs`)
-      .then((response) => {
-        setDogs(response.data);
-      });
+    await axios.get(`${URL}/dogs`).then((response) => {
+      setDogs(response.data);
+    });
   };
 
   const images: any = dog?.image.map((e) => ({

@@ -7,6 +7,7 @@ const Login = ({ setIsLoggedIn }: LoginProps) => {
   const [username, setUsername] = useState<string | undefined>();
   const [password, setPassword] = useState<string | undefined>();
   const [cookies, setCookie] = useCookies(["LAVERDABOOM-AUTH"]);
+  const URL = process.env.REACT_APP_SERVER_URL;
 
   useEffect(() => {
     axios.defaults.withCredentials = true;
@@ -16,7 +17,7 @@ const Login = ({ setIsLoggedIn }: LoginProps) => {
     try {
       await axios
         .post(
-          `https://laverdaboom-api.herokuapp.com/login`,
+          `${URL}/login`,
           {
             username: username,
             password: password,

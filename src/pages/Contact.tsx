@@ -6,19 +6,17 @@ const Contact = () => {
   const [name, setName] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [message, setMessage] = useState<string>();
+  const URL = process.env.REACT_APP_SERVER_URL;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "https://laverdaboom-api.herokuapp.com/email",
-        {
-          name,
-          email,
-          message,
-        }
-      );
+      const response = await axios.post(`${URL}/email`, {
+        name,
+        email,
+        message,
+      });
     } catch (error) {
       console.error("Failed.", error);
     }

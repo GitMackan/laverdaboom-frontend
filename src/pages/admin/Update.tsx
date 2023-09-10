@@ -23,6 +23,7 @@ const Update = () => {
   const [regNr, setRegNr] = useState<string | undefined>();
   const [color, setColor] = useState<string | undefined>();
   const [IVDD, setIVDD] = useState<string | undefined>();
+  const [nickName, setNickName] = useState<string | undefined>();
   const [BPH, setBPH] = useState<string | undefined>();
   const [eyes, setEyes] = useState<string | undefined>();
   const [birthDate, setBirthDate] = useState<string | undefined>();
@@ -56,7 +57,7 @@ const Update = () => {
     e.preventDefault();
     try {
       await axios.patch(
-        `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
+        `${URL}/dogs/${selectedDogId}`,
         {
           name: name,
           breed: breed && breed,
@@ -74,6 +75,7 @@ const Update = () => {
           titles: titles && titles,
           sessionToken: cookie,
           pedigree: pedigree && pedigree,
+          nickName: nickName && nickName,
         },
         {
           headers: {
@@ -115,6 +117,7 @@ const Update = () => {
           titles: titles && titles,
           sessionToken: cookie,
           pedigree: pedigree && pedigree,
+          nickName: nickName && nickName,
         },
         {
           headers: {
@@ -161,6 +164,7 @@ const Update = () => {
       setDescription(selectedDog.description);
       setTitles(selectedDog.titles as string[]);
       setPedigree(selectedDog.pedigree);
+      setNickName(selectedDog.nickName);
     }
   }, [selectedDogId]);
 
@@ -193,6 +197,14 @@ const Update = () => {
                   type="text"
                   value={name ? name : ""}
                   onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="input-field-container">
+                <label htmlFor="">Smeknamn:</label>
+                <input
+                  type="text"
+                  value={nickName ? nickName : ""}
+                  onChange={(e) => setNickName(e.target.value)}
                 />
               </div>
               <div className="input-field-container">

@@ -13,17 +13,32 @@ const Dogs = () => {
   const [dogs, setDogs] = useState<DogType[] | undefined>();
   const [selectedDogId, setSelectedDogId] = useState<DogType["_id"]>();
   const windowWidth = useWindowSize().width;
+  const URL = process.env.REACT_APP_SERVER_URL;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const getDogs = async () => {
-    await axios
-      .get(`https://laverdaboom-api.herokuapp.com/dogs`)
-      .then((response) => {
-        setDogs(response.data);
-      });
+    await axios.get(`${URL}/dogs`).then((response) => {
+      setDogs(response.data);
+    });
+  };
+
+  const generateSelectedDogUrl = (name: string): string => {
+    const characterMap = {
+      å: "a",
+      ä: "a",
+      ö: "o",
+    };
+
+    const sanitizedName = name
+      .toLowerCase()
+      .replace(/[åäö]/g, (match) => (characterMap as any)[match] || match);
+
+    const url = `${URL}/dogs/${encodeURIComponent(sanitizedName)}`;
+
+    return url;
   };
 
   useEffect(() => {
@@ -52,7 +67,7 @@ const Dogs = () => {
                 <Reveal>
                   <div className="all-dogs-dog">
                     <h3>{e.name}</h3>
-                    <Link to={`/dogs/${e.name}`}>
+                    <Link to={generateSelectedDogUrl(e.nickName)}>
                       <div className="all-dogs-image-container">
                         <img
                           src={`${assetUrl}${e.image[0]}`}
@@ -74,7 +89,7 @@ const Dogs = () => {
                 <Reveal>
                   <div className="all-dogs-dog">
                     <h3>{e.name}</h3>
-                    <Link to={`/dogs/${e.name}`}>
+                    <Link to={generateSelectedDogUrl(e.nickName)}>
                       <div className="all-dogs-image-container">
                         <img
                           src={`${assetUrl}${e.image[0]}`}
