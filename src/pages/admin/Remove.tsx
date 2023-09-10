@@ -12,11 +12,14 @@ const Remove = () => {
   const URL = process.env.REACT_APP_SERVER_URL;
 
   const handleRemove = async () => {
-    await axios.delete(`${URL}/dogs/${selectedDogId}`, {
-      data: {
-        sessionToken: cookie,
-      },
-    });
+    await axios.delete(
+      `https://laverdaboom-api.herokuapp.com/dogs/${selectedDogId}`,
+      {
+        data: {
+          sessionToken: cookie,
+        },
+      }
+    );
   };
 
   useEffect(() => {
