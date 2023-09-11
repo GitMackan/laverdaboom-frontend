@@ -35,11 +35,10 @@
 }
 
 .login-btn {
-  background: white;
+  background: $color-accent;
   border: 1px solid black;
   padding: 8px 4px;
-  background: $color-dark;
-  color: $color-accent;
+  color: $color-white;
   text-transform: uppercase;
   cursor: pointer;
 }
