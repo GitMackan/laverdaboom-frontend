@@ -164,8 +164,7 @@ const Puppies = () => {
             <Reveal>
               <p>
                 2023-07-21 föddes 5 välmående valpar på kenneln. Två tikar och
-                tre hanar. Ännu finns en otingad hane som letar efter ett
-                framtida hem.
+                tre hanar.
               </p>
             </Reveal>
             <Reveal>
