@@ -135,7 +135,7 @@ const Home = () => {
               </div>
               <Reveal>
                 <p>
-                  Tack Mlin Sundqvist för att jag fått låna din underbara Sarek
+                  Tack Malin Sundqvist för att jag fått låna din underbara Sarek
                   & tack Kim Thuner för förtroendet med Skrållan.
                 </p>
               </Reveal>

@@ -189,7 +189,7 @@ const Puppies = () => {
             </Reveal>
             <Reveal>
               <p>
-                Tack Mlin Sundqvist för att jag fått låna din underbara Sarek &
+                Tack Malin Sundqvist för att jag fått låna din underbara Sarek &
                 tack Kim Thuner för förtroendet med Skrållan.
                 <br /> <br />
                 Läs mer om vår nya valpkull nedan.

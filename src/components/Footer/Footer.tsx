@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
           </Reveal>
           <Reveal align="center">
-            <p className="contact-name">Rosa Johanssons</p>
+            <p className="contact-name">Rosa Johansson</p>
           </Reveal>
           <Reveal align="center">
             <p>Tunnbrödsvägen 3</p>
