@@ -158,24 +158,6 @@
   }
 }
 
-.partners {
-  color: red;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 3rem;
-  font-size: 3rem;
-
-  .partners-container {
-    .partner {
-      background: blue;
-
-      img {
-        max-width: 100%;
-      }
-    }
-  }
-}
-
 @media (max-width: 900px) {
   .footer-content {
     flex-direction: column;

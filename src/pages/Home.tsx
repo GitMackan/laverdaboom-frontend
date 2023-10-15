@@ -84,6 +84,17 @@ const Home = () => {
           </div>
         </div>
 
+        <div className="partners">
+          <div className="partner-desc">
+            <p>Vi är stolta sponsrade av K9 Competition och Buddy Pet Food</p>
+          </div>
+          <div className="partner-images">
+            <img src="/images/k9-competition.jpeg"></img>
+
+            <img src="/images/buddy-pet-food.png"></img>
+          </div>
+        </div>
+
         <div className="upcoming-puppies-wrapper">
           <div className="upcoming-puppies">
             <div className="right">
