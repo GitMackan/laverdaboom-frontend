@@ -378,6 +378,7 @@
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
     width: fit-content;
+    text-align: center;
   }
 
   .partner-images {
@@ -477,11 +478,17 @@
 }
 
 @media (max-width: 900px) {
-  .partners-container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
+  .partners {
+    .partner-images {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5rem;
+      img {
+        max-width: 70%;
+        margin: 0 auto;
+      }
+    }
   }
 
   .puppie-container h2 {
