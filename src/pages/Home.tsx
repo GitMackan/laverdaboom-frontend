@@ -85,13 +85,18 @@ const Home = () => {
         </div>
 
         <div className="partners">
-          <div className="partner-desc">
-            <p>Vi är stolta sponsrade av K9 Competition och Buddy Pet Food</p>
-          </div>
+          <Reveal align="center">
+            <div className="partner-desc">
+              <p>Vi är stolta sponsrade av K9 Competition och Buddy Pet Food</p>
+            </div>
+          </Reveal>
           <div className="partner-images">
-            <img src="/images/k9-competition.jpeg"></img>
-
-            <img src="/images/buddy-pet-food.png"></img>
+            <Reveal align="center">
+              <img src="/images/k9-competition.jpeg"></img>
+            </Reveal>
+            <Reveal align="center">
+              <img src="/images/buddy-pet-food.png"></img>
+            </Reveal>
           </div>
         </div>
 
