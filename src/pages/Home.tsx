@@ -1,16 +1,11 @@
 import { assetUrl } from "../assets/constants";
 import HeroSection from "../components/HeroSection/HeroSection";
-import { Parallax } from "react-scroll-parallax";
 import "./Home.scss";
-import { FiAward } from "react-icons/fi";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
 import { useWindowSize } from "../utility/useWindowSize";
 import Reveal from "../components/Animation.tsx/Reveal";
-import axios from "axios";
-import ImageFlipAnimation from "../components/Animation.tsx/ImageFlipAnimation";
-import { useInView } from "framer-motion";
 
 const Home = () => {
   const screenWidth = useWindowSize().width;
@@ -78,25 +73,11 @@ const Home = () => {
             </div>
             <div className="news-right">
               <Reveal>
-                <img src={`${assetUrl}laverdaboom.jpeg`} alt="" />
+                <div>
+                  <img src={`${assetUrl}laverdaboom.jpeg`} alt="" />
+                </div>
               </Reveal>
             </div>
-          </div>
-        </div>
-
-        <div className="partners">
-          <Reveal align="center">
-            <div className="partner-desc">
-              <p>Vi är stolta sponsrade av K9 Competition och Buddy Pet Food</p>
-            </div>
-          </Reveal>
-          <div className="partner-images">
-            <Reveal align="center">
-              <img src="/images/k9-competition.jpeg"></img>
-            </Reveal>
-            <Reveal align="center">
-              <img src="/images/buddy-pet-food.png"></img>
-            </Reveal>
           </div>
         </div>
 
