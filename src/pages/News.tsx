@@ -4,6 +4,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { BsCalendarEvent } from "react-icons/bs";
 import "./News.scss";
 import { useWindowSize } from "../utility/useWindowSize";
+import { CircleLoader } from "react-spinners";
 
 type InstagramData = {
   caption: string;
@@ -18,6 +19,7 @@ const News = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const windowWidth = useWindowSize().width;
   const [currentVideo, setCurrentVideo] = useState(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const setVideoRef = (ref: any, index: any) => {
     if (ref) {
@@ -37,6 +39,7 @@ const News = () => {
   const access_token = process.env.REACT_APP_INSTAGRAM_ACCESS_TOKEN;
 
   useEffect(() => {
+    setLoading(true);
     if (access_token) {
       axios
         .get(
@@ -44,6 +47,7 @@ const News = () => {
         )
         .then((response) => {
           setFeed(response.data.data);
+          setLoading(false);
         });
     }
 
@@ -53,7 +57,7 @@ const News = () => {
     ?grant_type=ig_refresh_token
     &access_token=${access_token}`
       )
-      .then((resp) => console.log(resp));
+      .then((resp) => setLoading(false));
   }, []);
 
   const handleVideoPlay = (index: any) => {
@@ -66,7 +70,12 @@ const News = () => {
       <p className="intro-text">
         Håll dig uppdaterad om nyheter i kenneln genom Sandras instagram!
       </p>
-      {feed?.length > 0 &&
+      {loading ? (
+        <div className="loader">
+          <CircleLoader color="#324b4c" size={150} />
+        </div>
+      ) : (
+        feed?.length > 0 &&
         feed.map((e, index) => {
           const date = new Date(e.timestamp);
           const formattedDate = date.toLocaleDateString();
@@ -102,7 +111,8 @@ const News = () => {
               </p>
             </div>
           );
-        })}
+        })
+      )}
     </div>
   );
 };

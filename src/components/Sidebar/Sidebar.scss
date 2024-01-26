@@ -60,4 +60,13 @@
   p {
     cursor: pointer;
   }
+  a {
+    color: $color-accent;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

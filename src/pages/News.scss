@@ -98,6 +98,13 @@
   }
 }
 
+.loader {
+  display: flex;
+  min-height: 50dvh;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 900px) {
   .insta-feed-container {
     .feed {

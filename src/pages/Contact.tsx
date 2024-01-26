@@ -1,25 +1,37 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Contact.scss";
+import { BarLoader } from "react-spinners";
+import Modal from "react-modal";
+import SucessModal from "../components/SucessModal";
 
 const Contact = () => {
-  const [name, setName] = useState<string>();
-  const [email, setEmail] = useState<string>();
-  const [message, setMessage] = useState<string>();
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
   const URL = process.env.REACT_APP_SERVER_URL;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${URL}/email`, {
+      await axios.post(`${URL}/email`, {
         name,
         email,
         message,
       });
+
+      setName("");
+      setEmail("");
+      setMessage("");
     } catch (error) {
       console.error("Failed.", error);
     }
+    setLoading(false);
+    setSuccess(true);
   };
 
   useEffect(() => {
@@ -79,10 +91,22 @@ const Contact = () => {
           </div>
           <div className="contact-form-input-field-container">
             <button type="submit" className="submitBtn">
-              Skicka meddelande
+              {loading ? (
+                <BarLoader color="white" width={"50%"} />
+              ) : (
+                "Skicka meddelande"
+              )}
             </button>
           </div>
         </form>
+        {success && (
+          <SucessModal
+            isOpen={success}
+            onClose={() => setSuccess(false)}
+            title="Title"
+            message="Test"
+          />
+        )}
       </div>
     </div>
   );

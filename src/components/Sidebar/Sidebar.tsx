@@ -34,7 +34,6 @@ const Sidebar = ({ dogs }: SidebarProps) => {
   return (
     <div className="sidebar">
       <div className="sidebar-heading">
-        {/* <h1>Hundar</h1> */}
         <Link to={"/dogs"}>
           <p>Se alla</p>
         </Link>

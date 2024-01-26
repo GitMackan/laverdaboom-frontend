@@ -96,12 +96,13 @@
   transition: 0.5s ease;
   flex-direction: column;
   z-index: 5;
-  left: -100%; // initial position outside the screen
-  transition: left 0.5s ease; // transition property for left property
+  top: -100%; // initial position outside the screen
+  transition: top 0.2s ease; // transition property for left property
+  left: 0;
 }
 
 .navbar-smallscreen_overlay.overlay-open {
-  left: 0;
+  top: 0;
 }
 
 .navbar-logo {

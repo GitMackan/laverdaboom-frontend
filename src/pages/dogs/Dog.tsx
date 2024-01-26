@@ -10,6 +10,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import { useWindowSize } from "../../utility/useWindowSize";
 import MobileSidebar from "../../components/MobileSidebar/MobileSidebar";
 import { Parent } from "../admin/Update";
+import { motion } from "framer-motion";
 
 export type DogType = {
   _id: string;
@@ -30,6 +31,20 @@ export type DogType = {
   titles?: string[];
   image: string[];
   pedigree: Parent[];
+};
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05 * index,
+    },
+  }),
 };
 
 const Dog = () => {
@@ -215,20 +230,32 @@ const Dog = () => {
                   <h5>Titlar & Meriter</h5>
                 </Reveal>
                 <div className="titles-container">
-                  {dog?.titles.map((e) => (
-                    <Reveal
-                      width={`${
-                        windowWidth && windowWidth > 1100
-                          ? "fit-content"
-                          : "100%"
-                      }`}
-                    >
-                      <div className="title">
+                  <ul>
+                    {dog?.titles.map((e, index) => (
+                      // <Reveal
+                      //   width={`${
+                      //     windowWidth && windowWidth > 1100
+                      //       ? "fit-content"
+                      //       : "100%"
+                      //   }`}
+                      // >
+                      <motion.li
+                        className="title"
+                        key={index}
+                        variants={fadeInAnimationVariants}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{
+                          once: true,
+                        }}
+                        custom={index}
+                      >
                         <FiAward color={"#324b4c"} size={24} />
                         <p>{e}</p>
-                      </div>
-                    </Reveal>
-                  ))}
+                      </motion.li>
+                      // </Reveal>
+                    ))}
+                  </ul>
                 </div>
               </div>
             )}

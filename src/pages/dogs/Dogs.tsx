@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Dogs.scss";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import Dog, { DogType } from "./Dog";
+import { DogType } from "./Dog";
 import axios from "axios";
 import { useWindowSize } from "../../utility/useWindowSize";
 import MobileSidebar from "../../components/MobileSidebar/MobileSidebar";
@@ -9,18 +9,10 @@ import { assetUrl } from "../../assets/constants";
 import Reveal from "../../components/Animation.tsx/Reveal";
 import { Link } from "react-router-dom";
 
-type URL = string;
-
 const Dogs = () => {
   const [dogs, setDogs] = useState<DogType[] | undefined>();
-  const [selectedDogId, setSelectedDogId] = useState<DogType["_id"]>();
   const windowWidth = useWindowSize().width;
   const URL = process.env.REACT_APP_SERVER_URL;
-  console.log(window.location.origin);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     getDogs();
@@ -34,7 +26,7 @@ const Dogs = () => {
     }
   };
 
-  const generateSelectedDogUrl = (name: string): URL => {
+  const generateSelectedDogUrl = (name: string): string => {
     const characterMap = {
       å: "a",
       ä: "a",
@@ -76,10 +68,7 @@ const Dogs = () => {
                     <h3>{e.name}</h3>
                     <Link to={generateSelectedDogUrl(e.nickName)}>
                       <div className="all-dogs-image-container">
-                        <img
-                          src={`${assetUrl}${e.image[0]}`}
-                          onClick={() => setSelectedDogId(e._id)}
-                        />
+                        <img src={`${assetUrl}${e.image[0]}`} />
                       </div>
                     </Link>
                   </div>
@@ -98,10 +87,7 @@ const Dogs = () => {
                     <h3>{e.name}</h3>
                     <Link to={generateSelectedDogUrl(e.nickName)}>
                       <div className="all-dogs-image-container">
-                        <img
-                          src={`${assetUrl}${e.image[0]}`}
-                          onClick={() => setSelectedDogId(e._id)}
-                        />
+                        <img src={`${assetUrl}${e.image[0]}`} />
                       </div>
                     </Link>
                   </div>
