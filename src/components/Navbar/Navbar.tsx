@@ -4,29 +4,11 @@ import { colors } from "../../assets/constants";
 import "./Navbar.scss";
 import Reveal from "../Animation.tsx/Reveal";
 import Hamburger from "hamburger-react";
-import { motion } from "framer-motion";
-import { navItems } from "./navItems";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.15 * index,
-    },
-  }),
-};
 
 const Navbar = () => {
   const [topScroll, setTopScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   const location = useLocation();
-
   const changeBackground = () => {
     if (window.scrollY >= 80) {
       setTopScroll(false);
@@ -34,12 +16,10 @@ const Navbar = () => {
       setTopScroll(true);
     }
   };
-
   useEffect(() => {
     changeBackground();
     window.addEventListener("scroll", changeBackground);
   }, []);
-
   function CustomLink({
     to,
     children,
@@ -52,7 +32,6 @@ const Navbar = () => {
   }) {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-
     return (
       <div className="link-item-container">
         <div className={isActive ? "active" : ""}>
@@ -76,7 +55,6 @@ const Navbar = () => {
       </div>
     );
   }
-
   return (
     <nav
       className="navbar"
@@ -150,23 +128,46 @@ const Navbar = () => {
           }`}
         >
           <ul className="navbar-smallscreen_links">
-            {navItems.map((e, index) => (
-              <motion.li
-                onClick={() => setMenuOpen(false)}
-                key={index}
-                variants={fadeInAnimationVariants}
-                initial="initial"
-                whileInView="animate"
-                custom={index}
-              >
-                <Link to={e.href}>{e.label}</Link>
-              </motion.li>
-            ))}
+            <li>
+              <Reveal align="center">
+                <Link to="/" onClick={() => setMenuOpen(false)}>
+                  Hem
+                </Link>
+              </Reveal>
+            </li>
+
+            <li>
+              <Reveal align="center">
+                <Link to="/dogs" onClick={() => setMenuOpen(false)}>
+                  Våra hundar
+                </Link>
+              </Reveal>
+            </li>
+            <li>
+              <Reveal align="center">
+                <Link to="/puppies" onClick={() => setMenuOpen(false)}>
+                  Valpar
+                </Link>
+              </Reveal>
+            </li>
+            <li>
+              <Reveal align="center">
+                <Link to="/news" onClick={() => setMenuOpen(false)}>
+                  Nyheter
+                </Link>
+              </Reveal>
+            </li>
+            <li>
+              <Reveal align="center">
+                <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                  Kontakt
+                </Link>
+              </Reveal>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
   );
 };
-
 export default Navbar;
