@@ -45,7 +45,7 @@ const Login = ({ setIsLoggedIn }: LoginProps) => {
 	return (
 		<div className="login-wrapper">
 			<div className="login-container">
-				<h3>Logga in!</h3>
+				<h3>Logga in</h3>
 				<div className="login-form">
 					<div className="login-form-input">
 						<label>Användarnamn:</label>

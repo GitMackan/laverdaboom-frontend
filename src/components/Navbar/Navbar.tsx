@@ -76,14 +76,12 @@ const Navbar = () => {
 			className="navbar"
 			id="navbar"
 			style={{
-				backgroundColor:
-					location.pathname === "/" && topScroll
-						? "rgba(255, 255, 255, 0)" // Transparent background
-						: location.pathname === "/contact"
-						? "#FFF" // White background for contact page
+				background:
+					location.pathname === "/contact"
+						? "#FFF"
 						: topScroll
-						? "rgba(255, 255, 255, 0)" // Transparent background
-						: "#FFF", // White background for other pages
+						? "transparent"
+						: "#FFF",
 			}}
 		>
 			<div className="navbar-logo">
@@ -140,26 +138,28 @@ const Navbar = () => {
 						toggled={menuOpen}
 					/>
 				</div>
-				<div
-					className={`navbar-smallscreen_overlay ${
-						menuOpen ? "overlay-open" : ""
-					}`}
-				>
-					<ul className="navbar-smallscreen_links">
-						{navItems.map((e, index) => (
-							<motion.li
-								onClick={() => setMenuOpen(false)}
-								key={index}
-								variants={fadeInAnimationVariants}
-								initial="initial"
-								whileInView="animate"
-								custom={index}
-							>
-								<Link to={e.href}>{e.label}</Link>
-							</motion.li>
-						))}
-					</ul>
-				</div>
+				{menuOpen && (
+					<div
+						className={`navbar-smallscreen_overlay ${
+							menuOpen ? "overlay-open" : ""
+						}`}
+					>
+						<ul className="navbar-smallscreen_links">
+							{navItems.map((e, index) => (
+								<motion.li
+									onClick={() => setMenuOpen(false)}
+									key={index}
+									variants={fadeInAnimationVariants}
+									initial="initial"
+									whileInView="animate"
+									custom={index}
+								>
+									<Link to={e.href}>{e.label}</Link>
+								</motion.li>
+							))}
+						</ul>
+					</div>
+				)}
 			</div>
 		</nav>
 	);
