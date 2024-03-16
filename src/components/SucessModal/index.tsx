@@ -35,7 +35,9 @@ const SucessModal = ({
         <div>
           <p>Vi svarar dig så fort vi kan!</p>
         </div>
-        <button className="close-btn">Stäng</button>
+        <button className="close-btn" onClick={onClose}>
+          Stäng
+        </button>
       </div>
     </Modal>
   );

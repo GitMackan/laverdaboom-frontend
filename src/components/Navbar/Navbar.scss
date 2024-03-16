@@ -1,5 +1,4 @@
 @import "../../variables";
-
 .navbar {
   max-width: 100%;
   width: 100%;
@@ -12,30 +11,25 @@
   min-height: 10vh;
   background: $color-dark;
 }
-
 .navbar ul div div li a {
   color: $color-accent;
   font-family: $font-secondary;
   font-weight: 400;
 }
-
 .navbar-logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .logo {
   font-size: 3em;
   font-family: $font-cursive;
   font-weight: 600;
 }
-
 .logo a {
   color: $color-accent;
   text-decoration: none;
 }
-
 .navbar-links {
   flex: 1;
   display: flex;
@@ -43,12 +37,10 @@
   align-items: center;
   list-style: none;
 }
-
 .navbar-links li {
   margin: 0 1rem;
   cursor: pointer;
 }
-
 .navbar-links li,
 .navbar-smallscreen_links li {
   font-weight: 400;
@@ -57,7 +49,6 @@
   line-height: 28px;
   font-size: 16px;
 }
-
 .navbar-links a {
   color: $color-dark;
   text-transform: capitalize;
@@ -65,19 +56,15 @@
   font-weight: 700;
   text-decoration: none;
 }
-
 .navbar-links a:hover {
   border-bottom: 1px solid $color-dark;
 }
-
 .navbar-links li:hover {
   color: grey;
 }
-
 .navbar-smallscreen {
   display: none;
 }
-
 .navbar-smallscreen_overlay {
   display: flex;
   justify-content: center;
@@ -113,7 +100,6 @@
     }
   }
 }
-
 .navbar-smallscreen_overlay .overlay-close,
 .navbar-smallscreen svg {
   font-size: 35px;
@@ -123,16 +109,13 @@
   right: 20px;
   z-index: 500;
 }
-
 .navbar-smallscreen,
 .navbar svg {
   color: $color-dark;
 }
-
 .hamburger-btn {
   z-index: 999;
 }
-
 .navbar-smallscreen_links li a {
   color: $color-accent;
   font-family: $font-secondary;
@@ -141,15 +124,12 @@
   text-transform: uppercase;
   font-size: 1.1rem;
 }
-
 .navbar-smallscreen_links li a:hover {
   border-bottom: 1px solid $color-accent;
 }
-
 .navbar-smallscreen_links {
   list-style: none;
 }
-
 .navbar-smallscreen_links li {
   margin: 2rem;
   cursor: pointer;
@@ -157,20 +137,16 @@
   font-size: 1.4rem;
   text-align: center;
 }
-
 .navbar-smallscreen_links li:hover {
   color: white;
 }
-
 .link-item-container div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 /* Media queries */
-
 @media screen and (max-width: 1150px) {
   .navbar-links {
     display: none;
@@ -184,7 +160,6 @@
     font-size: 3em;
   }
 }
-
 @media screen and (max-width: 650px) {
   .navbar {
     padding: 1rem;
