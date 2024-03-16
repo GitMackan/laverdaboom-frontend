@@ -77,7 +77,9 @@ const Navbar = () => {
 			id="navbar"
 			style={{
 				background:
-					location.pathname === "/contact"
+					location.pathname === "/" && topScroll
+						? "transparent"
+						: location.pathname === "/contact"
 						? "#FFF"
 						: topScroll
 						? "transparent"
