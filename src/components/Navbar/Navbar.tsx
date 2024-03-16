@@ -76,14 +76,14 @@ const Navbar = () => {
 			className="navbar"
 			id="navbar"
 			style={{
-				background:
+				backgroundColor:
 					location.pathname === "/" && topScroll
-						? "transparent"
+						? "rgba(255, 255, 255, 0)" // Transparent background
 						: location.pathname === "/contact"
-						? "#FFF"
+						? "#FFF" // White background for contact page
 						: topScroll
-						? "transparent"
-						: "#FFF",
+						? "rgba(255, 255, 255, 0)" // Transparent background
+						: "#FFF", // White background for other pages
 			}}
 		>
 			<div className="navbar-logo">
