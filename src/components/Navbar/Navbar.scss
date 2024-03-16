@@ -1,167 +1,167 @@
 @import "../../variables";
 .navbar {
-  max-width: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: fixed;
-  z-index: 10;
-  min-height: 10vh;
-  background: $color-dark;
+	max-width: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	position: fixed;
+	z-index: 10;
+	min-height: 10vh;
+	background: $color-dark;
 }
 .navbar ul div div li a {
-  color: $color-accent;
-  font-family: $font-secondary;
-  font-weight: 400;
+	color: $color-accent;
+	font-family: $font-secondary;
+	font-weight: 400;
 }
 .navbar-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .logo {
-  font-size: 3em;
-  font-family: $font-cursive;
-  font-weight: 600;
+	font-size: 3em;
+	font-family: $font-cursive;
+	font-weight: 600;
 }
 .logo a {
-  color: $color-accent;
-  text-decoration: none;
+	color: $color-accent;
+	text-decoration: none;
 }
 .navbar-links {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  list-style: none;
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	list-style: none;
 }
 .navbar-links li {
-  margin: 0 1rem;
-  cursor: pointer;
+	margin: 0 1rem;
+	cursor: pointer;
 }
 .navbar-links li,
 .navbar-smallscreen_links li {
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: capitalize;
-  line-height: 28px;
-  font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 0.04em;
+	text-transform: capitalize;
+	line-height: 28px;
+	font-size: 16px;
 }
 .navbar-links a {
-  color: $color-dark;
-  text-transform: capitalize;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-decoration: none;
+	color: $color-dark;
+	text-transform: capitalize;
+	font-size: 1.1rem;
+	font-weight: 700;
+	text-decoration: none;
 }
 .navbar-links a:hover {
-  border-bottom: 1px solid $color-dark;
+	border-bottom: 1px solid $color-dark;
 }
 .navbar-links li:hover {
-  color: grey;
+	color: grey;
 }
 .navbar-smallscreen {
-  display: none;
+	display: none;
 }
 .navbar-smallscreen_overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  // left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 235, 235, 1) 100%
-  );
-  transition: 0.5s ease;
-  flex-direction: column;
-  z-index: 5;
-  top: -100%; // initial position outside the screen
-  transition: top 0.2s ease; // transition property for left property
-  left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	// left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 235, 235, 1) 100%
+	);
+	transition: 0.5s ease;
+	flex-direction: column;
+	z-index: 5;
+	top: -100%; // initial position outside the screen
+	transition: top 0.2s ease; // transition property for left property
+	left: 0;
 }
 
 .navbar-smallscreen_overlay.overlay-open {
-  top: 0;
+	top: 0;
 }
 
 .navbar-logo {
-  z-index: 600;
-  .logo {
-    a {
-      color: $color-accent;
-    }
-  }
+	z-index: 600;
+	.logo {
+		a {
+			color: $color-accent;
+		}
+	}
 }
 .navbar-smallscreen_overlay .overlay-close,
 .navbar-smallscreen svg {
-  font-size: 35px;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 500;
+	font-size: 35px;
+	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 500;
 }
 .navbar-smallscreen,
 .navbar svg {
-  color: $color-dark;
+	color: $color-dark;
 }
 .hamburger-btn {
-  z-index: 999;
+	z-index: 999;
 }
 .navbar-smallscreen_links li a {
-  color: $color-accent;
-  font-family: $font-secondary;
-  text-decoration: none;
-  padding-bottom: 0.3rem;
-  text-transform: uppercase;
-  font-size: 1.1rem;
+	color: $color-accent;
+	font-family: $font-secondary;
+	text-decoration: none;
+	padding-bottom: 0.3rem;
+	text-transform: uppercase;
+	font-size: 1.1rem;
 }
 .navbar-smallscreen_links li a:hover {
-  border-bottom: 1px solid $color-accent;
+	border-bottom: 1px solid $color-accent;
 }
 .navbar-smallscreen_links {
-  list-style: none;
+	list-style: none;
 }
 .navbar-smallscreen_links li {
-  margin: 2rem;
-  cursor: pointer;
-  color: rgb(226, 226, 226);
-  font-size: 1.4rem;
-  text-align: center;
+	margin: 2rem;
+	cursor: pointer;
+	color: rgb(226, 226, 226);
+	font-size: 1.4rem;
+	text-align: center;
 }
 .navbar-smallscreen_links li:hover {
-  color: white;
+	color: white;
 }
 .link-item-container div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 /* Media queries */
 @media screen and (max-width: 1150px) {
-  .navbar-links {
-    display: none;
-  }
-  .navbar-smallscreen {
-    display: flex;
-    z-index: 10;
-    right: 20px;
-  }
-  .logo {
-    font-size: 3em;
-  }
+	.navbar-links {
+		display: none;
+	}
+	.navbar-smallscreen {
+		display: flex;
+		z-index: 10;
+		right: 20px;
+	}
+	.logo {
+		font-size: 3em;
+	}
 }
 @media screen and (max-width: 650px) {
-  .navbar {
-    padding: 1rem;
-  }
+	.navbar {
+		padding: 1rem;
+	}
 }
