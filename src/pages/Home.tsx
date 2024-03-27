@@ -8,80 +8,80 @@ import { useWindowSize } from "../utility/useWindowSize";
 import Reveal from "../components/Animation.tsx/Reveal";
 
 const Home = () => {
-  const screenWidth = useWindowSize().width;
-  const location = useLocation();
-  const newsRef = useRef<HTMLDivElement>(null);
-  // const imageRef = useRef<HTMLDivElement>(null);
-  // const imageInView = useInView(imageRef);
-  // const [scroll, setScroll] = useState<any>();
+	const screenWidth = useWindowSize().width;
+	const location = useLocation();
+	const newsRef = useRef<HTMLDivElement>(null);
+	// const imageRef = useRef<HTMLDivElement>(null);
+	// const imageInView = useInView(imageRef);
+	// const [scroll, setScroll] = useState<any>();
 
-  // console.log(scroll);
+	// console.log(scroll);
 
-  // const handleScroll = () => {
-  //   const scrollPosition = window.scrollY; // => scroll position
-  //   setScroll(scrollPosition / 10);
-  // };
-  // useEffect(() => {
-  //   handleScroll();
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+	// const handleScroll = () => {
+	//   const scrollPosition = window.scrollY; // => scroll position
+	//   setScroll(scrollPosition / 10);
+	// };
+	// useEffect(() => {
+	//   handleScroll();
+	//   window.addEventListener("scroll", handleScroll);
+	//   return () => {
+	//     window.removeEventListener("scroll", handleScroll);
+	//   };
+	// }, []);
 
-  useEffect(() => {
-    if (newsRef.current && location.hash === "#news") {
-      const offSet = screenWidth && screenWidth > 1500 ? -125 : -125;
-      const y =
-        newsRef.current?.getBoundingClientRect().top +
-        window.pageYOffset +
-        offSet;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  }, [location.hash]);
+	useEffect(() => {
+		if (newsRef.current && location.hash === "#news") {
+			const offSet = screenWidth && screenWidth > 1500 ? -125 : -125;
+			const y =
+				newsRef.current?.getBoundingClientRect().top +
+				window.pageYOffset +
+				offSet;
+			window.scrollTo({ top: y, behavior: "smooth" });
+		}
+	}, [location.hash]);
 
-  return (
-    <>
-      <HeroSection />
-      <div className="home-wrapper">
-        <div className="news-container" id="news">
-          <div className="news" id="news" ref={newsRef}>
-            <div className="news-left">
-              <div className="card-heading-container">
-                <div className="dog-paw">
-                  <Reveal>
-                    <img src="https://laverdaboom.s3.eu-north-1.amazonaws.com/uploads/dog-paw.png" />
-                  </Reveal>
-                </div>
-                <Reveal>
-                  <h2 className="card-heading">Vilka är vi?</h2>
-                </Reveal>
-              </div>
-              <Reveal>
-                <p>
-                  Laverdabooms kennel är en liten kennel som föder upp trevliga
-                  och sunda hundar i hemmamiljö. Kenneln registrerades 2015 och
-                  2016 fick vi vår första kull med långhåriga Standardtaxar. Vi
-                  som äger kenneln är Sandra och min mamma Rosa. På fritiden
-                  ägnar vi mycket tid till våra hundar och familjen.
-                  Rallylydnad, Utställning och viltspår är något vi gillar att
-                  aktivera våra hundar med. Vi Strävar efter att avla friska och
-                  trevliga hundar och lägger stor vikt i att hitta de perfekta
-                  hemmen till våra valpar.
-                </p>
-              </Reveal>
-            </div>
-            <div className="news-right">
-              <Reveal>
-                <div>
-                  <img src={`${assetUrl}laverdaboom.jpeg`} alt="" />
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </div>
+	return (
+		<>
+			<HeroSection />
+			<div className="home-wrapper">
+				<div className="news-container" id="news">
+					<div className="news" id="news" ref={newsRef}>
+						<div className="news-left">
+							<div className="card-heading-container">
+								<div className="dog-paw">
+									<Reveal>
+										<img src="https://laverdaboom.s3.eu-north-1.amazonaws.com/uploads/dog-paw.png" />
+									</Reveal>
+								</div>
+								<Reveal>
+									<h2 className="card-heading">Vilka är vi?</h2>
+								</Reveal>
+							</div>
+							<Reveal>
+								<p>
+									Laverdabooms kennel är en liten kennel som föder upp trevliga
+									och sunda hundar i hemmamiljö. Kenneln registrerades 2015 och
+									2016 fick vi vår första kull med långhåriga Standardtaxar. Vi
+									som äger kenneln är Sandra och min mamma Rosa. På fritiden
+									ägnar vi mycket tid till våra hundar och familjen.
+									Rallylydnad, Utställning och viltspår är något vi gillar att
+									aktivera våra hundar med. Vi Strävar efter att avla friska och
+									trevliga hundar och lägger stor vikt i att hitta de perfekta
+									hemmen till våra valpar.
+								</p>
+							</Reveal>
+						</div>
+						<div className="news-right">
+							<Reveal>
+								<div>
+									<img src={`${assetUrl}laverdaboom.jpeg`} alt="" />
+								</div>
+							</Reveal>
+						</div>
+					</div>
+				</div>
 
-        <div className="upcoming-puppies-wrapper">
+				{/* <div className="upcoming-puppies-wrapper">
           <div className="upcoming-puppies">
             <div className="right">
               <Reveal>
@@ -141,10 +141,10 @@ const Home = () => {
               </Reveal>
             </div>
           </div>
-        </div>
-      </div>
-    </>
-  );
+        </div> */}
+			</div>
+		</>
+	);
 };
 
 export default Home;
